@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="icoon" width="96" height="96"><style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+svg { color: #2a6f97; }
+.icoon { fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+</style><rect x="12" y="20" width="18" height="24" rx="3"/><rect x="17" y="13" width="8" height="7"/><path d="M25,15 H30 M36,11 h0.1 M40,15 h0.1 M36,19 h0.1"/></svg>

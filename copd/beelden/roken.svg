@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 390" role="img" aria-labelledby="fp-t" width="860" height="390">
+        <title id="fp-t">Longfunctie per leeftijd. Wie blijft roken, gaat snel achteruit. Wie stopt, gaat daarna weer net zo langzaam achteruit als iemand die nooit rookte.</title>
+        <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+</style><path d="M80,190 L680,190" stroke="#b85c00" stroke-width="2" stroke-dasharray="8 7"/>
+        <text x="86" y="182" font-size="18" fill="#b85c00">klachten bij inspanning</text>
+        <path d="M80,260 L680,260" stroke="#e31e26" stroke-width="2" stroke-dasharray="8 7"/>
+        <text x="86" y="252" font-size="18" fill="#e31e26">ernstige klachten</text>
+        <path d="M80,36 L80,330 L680,330" stroke="#8f8f8f" stroke-width="2.5" fill="none"/>
+        <g font-size="18" fill="#5d5753" text-anchor="middle">
+          <text x="80" y="354">25</text><text x="200" y="354">35</text><text x="320" y="354">45</text><text x="440" y="354">55</text><text x="560" y="354">65</text><text x="680" y="354">75</text>
+          <text x="380" y="380">leeftijd (jaar)</text>
+        </g>
+        <text x="60" y="190" font-size="18" fill="#5d5753" text-anchor="middle" transform="rotate(-90 60 190)">longfunctie</text>
+        <path d="M80,50L95,50.7L110,51.5L125,52.3L140,53.2L155,54.2L170,55.1L185,56.2L200,57.3L215,58.4L230,59.6L245,60.9L260,62.2L275,63.5L290,64.9L305,66.4L320,67.9L335,69.5L350,71.1L365,72.8L380,74.5L395,76.3L410,78.1L425,80L440,81.9L455,83.9L470,85.9L485,88L500,90.2L515,92.4L530,94.6L545,96.9L560,99.3L575,101.7L590,104.1L605,106.7L620,109.2L635,111.8L650,114.5L665,117.2L680,120" stroke="#2f7d5b" stroke-width="5" fill="none"/>
+        <path d="M80,50L95,51.8L110,53.9L125,56L140,58.4L155,60.9L170,63.6L185,66.5L200,69.6L215,72.8L230,76.2L245,79.8L260,83.6L275,87.5L290,91.7L305,95.9L320,100.4L335,105L350,109.8L365,114.8L380,120L395,125.3L410,130.8L425,136.5L440,142.4L455,148.4L470,154.6L485,161L500,167.6L515,174.3L530,181.2L545,188.3L560,195.6L575,203L590,210.6L605,218.4L620,226.4L635,234.5L650,242.8L665,251.3L680,260" stroke="#e31e26" stroke-width="5" fill="none"/>
+        <path d="M320,100.4L329,101.3L338,102.3L347,103.3L356,104.2L365,105.3L374,106.3L383,107.3L392,108.4L401,109.5L410,110.6L419,111.7L428,112.8L437,114L446,115.2L455,116.4L464,117.6L473,118.8L482,120.1L491,121.4L500,122.7L509,124L518,125.3L527,126.7L536,128L545,129.4L554,130.8L563,132.2L572,133.7L581,135.1L590,136.6L599,138.1L608,139.6L617,141.2L626,142.7L635,144.3L644,145.9L653,147.5L662,149.2L671,150.8L680,152.5" stroke="#2a6f97" stroke-width="5" fill="none"/>
+        <path d="M560,195.6L563,196.1L566,196.6L569,197L572,197.5L575,198L578,198.5L581,199L584,199.5L587,200L590,200.5L593,201L596,201.5L599,202L602,202.5L605,203L608,203.5L611,204L614,204.5L617,205L620,205.5L623,206.1L626,206.6L629,207.1L632,207.6L635,208.2L638,208.7L641,209.2L644,209.8L647,210.3L650,210.8L653,211.4L656,211.9L659,212.5L662,213L665,213.5L668,214.1L671,214.6L674,215.2L677,215.8L680,216.3" stroke="#6aaed6" stroke-width="5" fill="none" stroke-dasharray="10 7"/>
+        <circle cx="320" cy="100.4" r="7" fill="#2a6f97"/><circle cx="560" cy="195.6" r="7" fill="#6aaed6"/>
+        <g font-size="21" font-weight="700">
+          <text x="690" y="125" fill="#2f7d5b">nooit gerookt</text>
+          <text x="690" y="158" fill="#2a6f97">gestopt op 45</text>
+          <text x="690" y="222" fill="#4a90bd">gestopt op 65</text>
+          <text x="690" y="266" fill="#e31e26">blijven roken</text>
+        </g>
+      </svg>

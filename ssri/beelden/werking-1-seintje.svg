@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 430" role="img" aria-labelledby="syn-t" width="660" height="430">
+        <title id="syn-t">Twee zenuwcellen met een spleet ertussen. Serotonine gaat van de ene cel naar de andere. Een pompje haalt de serotonine terug.</title>
+        <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+/* tekeningen: kleuren en bewegingen */
+.zweef { animation: zweef 3.2s ease-in-out infinite alternate; transform-box: fill-box; }
+.zweef.b { animation-delay: -1.1s; } .zweef.c { animation-delay: -2.1s; } .zweef.d { animation-duration: 2.6s; }
+@keyframes zweef { from { transform: translate(-3px, -4px); } to { transform: translate(4px, 4px); } }
+.stroom { stroke-dasharray: 10 14; animation: stroom 1.4s linear infinite; }
+.stroom.traag { animation-duration: 3.2s; }
+@keyframes stroom { to { stroke-dashoffset: -48; } }
+.klop { transform-box: fill-box; transform-origin: center; animation: klop 1s ease-in-out infinite; }
+.klop.zwak { animation: klopzwak 1.25s ease-in-out infinite; }
+@keyframes klop { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.13); } }
+@keyframes klopzwak { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.04); } }
+.golf { transform-box: fill-box; transform-origin: center; animation: golf 1.6s ease-out infinite; }
+@keyframes golf { 0% { transform: scale(.1); opacity: .9; } 70% { opacity: .35; } 100% { transform: scale(1); opacity: 0; } }
+.seintje { stroke-dasharray: 26 400; animation: seintje 1.6s linear infinite; }
+@keyframes seintje { 0%, 30% { stroke-dashoffset: 26; } 75%, 100% { stroke-dashoffset: -260; } }
+.flikker { animation: flikker .9s steps(2, jump-none) infinite; }
+.flikker.b { animation-duration: .7s; animation-delay: -.3s; } .flikker.c { animation-duration: 1.1s; animation-delay: -.5s; }
+@keyframes flikker { 0% { opacity: 1; } 100% { opacity: .15; } }
+.kamerslag { animation: kamerslag 4.6s linear infinite; }
+@keyframes kamerslag { 0%, 4%, 17%, 21%, 30%, 34%, 58%, 62%, 70%, 74%, 92%, 96%, 100% { opacity: 0; }
+  2%, 19%, 32%, 60%, 72%, 94% { opacity: .55; } }
+.kamerslag-r { animation: kamerslagr 1.6s linear infinite; }
+@keyframes kamerslagr { 0%, 45%, 62%, 100% { opacity: 0; } 52% { opacity: .55; } }
+@media (prefers-reduced-motion: reduce) {
+  .zweef, .stroom, .klop, .golf, .seintje, .flikker, .kamerslag, .kamerslag-r { animation: none !important; }
+  .golf { transform: scale(.4); opacity: .5; } .seintje { stroke-dasharray: none; opacity: .7; }
+  .kamerslag, .kamerslag-r { opacity: .3; } .flikker { opacity: .8; }
+}
+</style><defs>
+          <marker id="pijl" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2a6f97"/></marker>
+          <marker id="pijlgrijs" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8f8f8f"/></marker>
+        </defs>
+        <!-- richting van het seintje -->
+        <path d="M70,32 L590,32" stroke="#8f8f8f" stroke-width="3" fill="none" marker-end="url(#pijlgrijs)"/>
+        <text x="330" y="22" text-anchor="middle" font-size="17" fill="#5d5753">richting van het seintje</text>
+        <!-- zenuwcel 1 -->
+        <path d="M0,175 C70,175 95,160 120,125 C150,80 195,55 240,58 C272,61 290,90 290,130 L290,290 C290,330 272,359 240,362 C195,365 150,340 120,295 C95,260 70,245 0,245 Z" fill="#ece6f6" stroke="#8a78b5" stroke-width="4"/>
+        <!-- zenuwcel 2 -->
+        <path d="M660,175 C590,175 565,160 540,125 C510,80 465,55 420,58 C388,61 370,90 370,130 L370,290 C370,330 388,359 420,362 C465,365 510,340 540,295 C565,260 590,245 660,245 Z" fill="#ece6f6" stroke="#8a78b5" stroke-width="4"/>
+        <!-- blaasjes met serotonine -->
+        <g fill="#fff" stroke="#8a78b5" stroke-width="2.5">
+          <circle cx="205" cy="128" r="28"/><circle cx="222" cy="285" r="28"/><circle cx="150" cy="205" r="24"/>
+        </g>
+        <g fill="#f0a030">
+          <circle cx="196" cy="120" r="5.5"/><circle cx="213" cy="126" r="5.5"/><circle cx="201" cy="140" r="5.5"/>
+          <circle cx="214" cy="279" r="5.5"/><circle cx="230" cy="290" r="5.5"/><circle cx="216" cy="296" r="5.5"/>
+          <circle cx="144" cy="200" r="5.5"/><circle cx="157" cy="210" r="5.5"/>
+        </g>
+        <!-- ontvangers op zenuwcel 2 -->
+        <g fill="#6f5aa8">
+          <path d="M372,104 h-16 v8 h8 v16 h-8 v8 h16 z"/>
+          <path d="M372,159 h-16 v8 h8 v16 h-8 v8 h16 z"/>
+          <path d="M372,234 h-16 v8 h8 v16 h-8 v8 h16 z"/>
+          <path d="M372,289 h-16 v8 h8 v16 h-8 v8 h16 z"/>
+        </g>
+        <!-- pompje in de wand van zenuwcel 1 -->
+        <g fill="#2a6f97">
+          <rect x="278" y="176" width="22" height="22" rx="5"/>
+          <rect x="278" y="214" width="22" height="22" rx="5"/>
+        </g>
+        <!-- serotonine in de spleet: weinig (stap 1 en 2) -->
+        <g fill="#f0a030">
+          <circle class="zweef" cx="318" cy="128" r="6.5"/><circle class="zweef b" cx="332" cy="250" r="6.5"/>
+          <circle class="zweef c" cx="313" cy="292" r="6.5"/>
+          <circle cx="361" cy="175" r="6.5"/>
+        </g>
+        <!-- serotonine in de spleet: meer (stap 3 en 4) -->
+        <!-- stap 1: afgifte -->
+        <g>
+          <path d="M238,140 C262,140 280,135 300,128" stroke="#2a6f97" stroke-width="3.5" fill="none" marker-end="url(#pijl)"/>
+        </g>
+        <!-- stap 2: terughalen door het pompje -->
+        <!-- stap 3 en 4: SSRI blokkeert het pompje -->
+        <!-- stap 4: klok -->
+        <!-- labels -->
+        <text x="70" y="300" font-size="19" fill="#4a3d73" font-weight="600">zenuwcel</text>
+        <text x="520" y="400" font-size="19" fill="#4a3d73" font-weight="600" text-anchor="middle">volgende zenuwcel</text>
+        <text x="330" y="408" font-size="17" fill="#5d5753" text-anchor="middle">spleet</text>
+        <path d="M330,390 L330,370" stroke="#8f8f8f" stroke-width="2"/>
+      </svg>

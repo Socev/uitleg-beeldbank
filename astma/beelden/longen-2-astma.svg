@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 420" role="img" aria-labelledby="aw-t" width="580" height="420">
+        <title id="aw-t">Doorsnede van een buisje in de longen: gezond, ontstoken bij astma, en dichtgeknepen bij een aanval.</title>
+        <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+</style><!-- kleine longen ter oriëntatie -->
+        <g stroke="#c9867a" stroke-width="2.5" fill="#f7e0d8">
+          <rect x="56" y="40" width="14" height="52" rx="6"/>
+          <path d="M55,96 C32,100 16,140 16,190 C16,232 32,252 52,247 C60,245 61,232 61,217 L61,106 Z"/>
+          <path d="M71,96 C94,100 110,140 110,190 C110,232 94,252 74,247 C66,245 65,232 65,217 L65,106 Z"/>
+        </g>
+        <path d="M63,92 L42,132 L38,172 M42,132 L28,160 M63,92 L84,132 L88,172 M84,132 L98,160" stroke="#c9867a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="86" cy="150" r="11" fill="none" stroke="#e31e26" stroke-width="3"/>
+        <path d="M97,150 C140,150 170,180 210,205" stroke="#e31e26" stroke-width="2.5" fill="none" stroke-dasharray="6 6"/>
+        <text x="63" y="282" text-anchor="middle" font-size="15" fill="#5d5753">doorsnede</text>
+        <text x="63" y="300" text-anchor="middle" font-size="15" fill="#5d5753">van een buisje</text>
+
+        <!-- gezond (ook na ontstekingsremmer) -->
+        <!-- ontstoken (ook na luchtwegverwijder) -->
+        <g>
+          <circle cx="380" cy="210" r="168" fill="#f7e0d8" stroke="#dcb0a2" stroke-width="3"/>
+          <circle cx="380" cy="210" r="148" fill="none" stroke="#c46a5a" stroke-width="12" stroke-dasharray="30 9"/>
+          <circle cx="380" cy="210" r="139" fill="#eb9b87"/>
+          <g fill="#c8402f">
+            <circle cx="380" cy="98" r="4"/><circle cx="458" cy="130" r="4"/><circle cx="492" cy="212" r="4"/><circle cx="460" cy="292" r="4"/>
+            <circle cx="380" cy="322" r="4"/><circle cx="300" cy="290" r="4"/><circle cx="268" cy="210" r="4"/><circle cx="302" cy="130" r="4"/>
+            <circle cx="420" cy="108" r="3"/><circle cx="484" cy="252" r="3"/><circle cx="340" cy="316" r="3"/><circle cx="276" cy="168" r="3"/>
+          </g>
+          <circle cx="380" cy="210" r="72" fill="#e6f3fb" stroke="#d98a76" stroke-width="2.5"/>
+          <g fill="#eee2a0" stroke="#cdbb5f" stroke-width="2">
+            <ellipse cx="344" cy="244" rx="24" ry="13" transform="rotate(-35 344 244)"/>
+            <ellipse cx="420" cy="172" rx="19" ry="11" transform="rotate(-40 420 172)"/>
+            <ellipse cx="424" cy="244" rx="13" ry="9"/>
+          </g>
+        </g>
+        <!-- aanval: spiertjes knijpen samen -->
+        <text x="380" y="217" text-anchor="middle" font-size="18" font-weight="600" fill="#2a6f97">lucht</text>
+        <!-- medicijnlabels -->
+        </svg>

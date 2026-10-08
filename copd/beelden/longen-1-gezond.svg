@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" role="img" aria-labelledby="copd-t" width="600" height="420">
+        <title id="copd-t">Een luchtbuisje met longblaasjes. Gezond: ruime buisjes en veel kleine blaasjes. COPD: nauwe buisjes met slijm en kapotte, grote blaasjes.</title>
+        <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+</style><!-- gezond -->
+        <g>
+          <g fill="#f7d3c8" stroke="#d98f7d" stroke-width="2.5">
+            <circle cx="385" cy="95" r="17"/><circle cx="359" cy="80" r="17"/><circle cx="411" cy="80" r="17"/><circle cx="357" cy="108" r="17"/><circle cx="413" cy="108" r="17"/><circle cx="385" cy="65" r="17"/><circle cx="385" cy="124" r="17"/>
+            <circle cx="395" cy="210" r="17"/><circle cx="369" cy="195" r="17"/><circle cx="421" cy="195" r="17"/><circle cx="367" cy="223" r="17"/><circle cx="423" cy="223" r="17"/><circle cx="395" cy="180" r="17"/><circle cx="395" cy="239" r="17"/>
+            <circle cx="300" cy="330" r="17"/><circle cx="274" cy="315" r="17"/><circle cx="326" cy="315" r="17"/><circle cx="272" cy="343" r="17"/><circle cx="328" cy="343" r="17"/><circle cx="300" cy="300" r="17"/><circle cx="300" cy="359" r="17"/>
+          </g>
+          <g fill="none" stroke-linecap="round">
+            <g stroke="#e9a493" stroke-width="34">
+              <path d="M40,30 C90,80 140,130 200,165"/><path d="M200,165 C250,140 290,118 345,103"/><path d="M200,165 C260,178 300,195 356,207"/><path d="M200,165 C222,212 240,250 276,300"/>
+            </g>
+            <g stroke="#e6f3fb" stroke-width="24">
+              <path d="M40,30 C90,80 140,130 200,165"/><path d="M200,165 C250,140 290,118 345,103"/><path d="M200,165 C260,178 300,195 356,207"/><path d="M200,165 C222,212 240,250 276,300"/>
+            </g>
+          </g>
+          <text x="20" y="215" font-size="18" font-weight="600" fill="#24201f">luchtbuisje</text><path d="M60,198 L100,112" stroke="#8f8f8f" stroke-width="2"/>
+          <text x="455" y="300" font-size="18" font-weight="600" fill="#24201f">longblaasjes</text>
+          <path d="M452,293 C430,280 425,262 420,248" stroke="#8f8f8f" stroke-width="2" fill="none"/>
+          <text x="455" y="322" font-size="15" fill="#5d5753">hier gaat zuurstof</text>
+          <text x="455" y="340" font-size="15" fill="#5d5753">je bloed in</text>
+        </g>
+        <!-- COPD -->
+        </svg>

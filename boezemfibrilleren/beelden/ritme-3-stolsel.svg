@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 540" role="img" aria-labelledby="af-t" width="620" height="540">
+        <title id="af-t">Schematisch hart met twee boezems boven en twee kamers onder. Normaal geeft de sinusknoop een regelmatig seintje. Bij boezemfibrilleren lopen er veel seintjes door elkaar in de boezems.</title>
+        <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+/* tekeningen: kleuren en bewegingen */
+.zweef { animation: zweef 3.2s ease-in-out infinite alternate; transform-box: fill-box; }
+.zweef.b { animation-delay: -1.1s; } .zweef.c { animation-delay: -2.1s; } .zweef.d { animation-duration: 2.6s; }
+@keyframes zweef { from { transform: translate(-3px, -4px); } to { transform: translate(4px, 4px); } }
+.stroom { stroke-dasharray: 10 14; animation: stroom 1.4s linear infinite; }
+.stroom.traag { animation-duration: 3.2s; }
+@keyframes stroom { to { stroke-dashoffset: -48; } }
+.klop { transform-box: fill-box; transform-origin: center; animation: klop 1s ease-in-out infinite; }
+.klop.zwak { animation: klopzwak 1.25s ease-in-out infinite; }
+@keyframes klop { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.13); } }
+@keyframes klopzwak { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.04); } }
+.golf { transform-box: fill-box; transform-origin: center; animation: golf 1.6s ease-out infinite; }
+@keyframes golf { 0% { transform: scale(.1); opacity: .9; } 70% { opacity: .35; } 100% { transform: scale(1); opacity: 0; } }
+.seintje { stroke-dasharray: 26 400; animation: seintje 1.6s linear infinite; }
+@keyframes seintje { 0%, 30% { stroke-dashoffset: 26; } 75%, 100% { stroke-dashoffset: -260; } }
+.flikker { animation: flikker .9s steps(2, jump-none) infinite; }
+.flikker.b { animation-duration: .7s; animation-delay: -.3s; } .flikker.c { animation-duration: 1.1s; animation-delay: -.5s; }
+@keyframes flikker { 0% { opacity: 1; } 100% { opacity: .15; } }
+.kamerslag { animation: kamerslag 4.6s linear infinite; }
+@keyframes kamerslag { 0%, 4%, 17%, 21%, 30%, 34%, 58%, 62%, 70%, 74%, 92%, 96%, 100% { opacity: 0; }
+  2%, 19%, 32%, 60%, 72%, 94% { opacity: .55; } }
+.kamerslag-r { animation: kamerslagr 1.6s linear infinite; }
+@keyframes kamerslagr { 0%, 45%, 62%, 100% { opacity: 0; } 52% { opacity: .55; } }
+@media (prefers-reduced-motion: reduce) {
+  .zweef, .stroom, .klop, .golf, .seintje, .flikker, .kamerslag, .kamerslag-r { animation: none !important; }
+  .golf { transform: scale(.4); opacity: .5; } .seintje { stroke-dasharray: none; opacity: .7; }
+  .kamerslag, .kamerslag-r { opacity: .3; } .flikker { opacity: .8; }
+}
+</style><defs>
+          <clipPath id="boezemclip"><path d="M120,110 C120,60 260,60 285,100 C310,60 450,60 455,115 L458,225 L120,225 Z"/></clipPath>
+          <clipPath id="kamerclip"><path d="M120,225 L458,225 L460,230 C460,340 370,420 310,450 C240,420 125,350 118,230 Z"/></clipPath>
+          <marker id="pijlrood" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8e1b1b"/></marker>
+        </defs>
+        <!-- hart -->
+        <path d="M450,120 C478,100 505,125 485,148 C475,158 460,152 456,142 Z" fill="#f4c6bd" stroke="#c9675b" stroke-width="4"/>
+        <path d="M120,110 C120,60 260,60 285,100 C310,60 450,60 455,115 L460,230 C460,340 370,420 310,450 C240,420 125,350 118,230 Z" fill="#f4c6bd" stroke="#c9675b" stroke-width="4"/>
+        <path d="M120,225 L458,225 M287,98 L287,225 M287,225 C292,320 300,390 310,448" stroke="#c9675b" stroke-width="4" fill="none"/>
+        <g font-size="19" font-weight="600" fill="#8a4035" text-anchor="middle">
+          <text x="205" y="180">boezem</text><text x="372" y="180">boezem</text>
+          <text x="205" y="345">kamer</text><text x="372" y="345">kamer</text>
+        </g>
+        <!-- normaal ritme -->
+        <!-- boezemfibrilleren -->
+        <g>
+          <g fill="none" stroke="#e8a21a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+            <path class="flikker" d="M140,140 l10,-10 l8,12 l10,-11 l9,10"/>
+            <path class="flikker b" d="M200,105 l9,9 l9,-11 l9,10 l10,-9"/>
+            <path class="flikker c" d="M150,200 l10,-9 l9,10 l9,-11 l10,9"/>
+            <path class="flikker b" d="M230,150 l8,-10 l9,11 l9,-10 l9,9"/>
+            <path class="flikker" d="M310,120 l10,10 l8,-11 l10,10 l9,-9"/>
+            <path class="flikker c" d="M380,100 l9,-9 l9,11 l9,-10 l9,9"/>
+            <path class="flikker b" d="M330,200 l10,-10 l9,10 l9,-11 l9,9"/>
+            <path class="flikker" d="M400,150 l9,9 l10,-11 l9,10 l9,-9"/>
+          </g>
+          <path d="M120,225 L458,225 L460,230 C460,340 370,420 310,450 C240,420 125,350 118,230 Z" fill="#d9443f" class="kamerslag"/>
+        </g>
+        <!-- sinusknoop en AV-knoop -->
+        <circle cx="165" cy="110" r="11" fill="#f2b233" stroke="#a8740f" stroke-width="2.5"/>
+        <circle cx="287" cy="236" r="9" fill="#f2b233" stroke="#a8740f" stroke-width="2.5"/>
+        <path d="M152,104 L104,78" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="66" y="44" font-size="16" font-weight="700" fill="#24201f" text-anchor="middle">sinusknoop</text>
+        <text x="66" y="64" font-size="14" fill="#5d5753" text-anchor="middle">(gangmaker)</text>
+        <path d="M278,240 L90,262" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="66" y="282" font-size="16" font-weight="700" fill="#24201f" text-anchor="middle">AV-knoop</text>
+        <text x="66" y="302" font-size="14" fill="#5d5753" text-anchor="middle">(doorgeefluik)</text>
+        <!-- stolsel -->
+        <g>
+          <g fill="#8e1b1b"><circle cx="476" cy="128" r="9"/><circle cx="468" cy="138" r="7"/><circle cx="485" cy="137" r="6"/></g>
+          <path d="M492,116 C520,96 538,84 548,74" stroke="#8e1b1b" stroke-width="4" fill="none" stroke-dasharray="7 6" marker-end="url(#pijlrood)"/>
+          <path d="M538,46 C530,30 548,16 562,24 C572,12 594,18 594,34 C606,40 604,60 590,64 C586,76 566,78 558,70 C544,74 532,62 538,46 Z" fill="#f3e3ef" stroke="#9a5b8c" stroke-width="3"/>
+          <path d="M556,36 C566,40 568,52 578,52 M572,28 C576,36 586,38 590,46" stroke="#9a5b8c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <text x="528" y="30" font-size="17" font-weight="700" fill="#8e1b1b" text-anchor="end">beroerte</text>
+          <text x="528" y="50" font-size="14" fill="#5d5753" text-anchor="end">(hersenen)</text>
+        </g>
+        <!-- bloedverdunner -->
+        <!-- hartfilmpje -->
+        <text x="40" y="452" font-size="15" fill="#5d5753">hartfilmpje</text>
+        <path d="M40,505L40,503.8L44,502.6L56,505L59,510L63,459L67,518L70,505L86,505L89,501.3L92,497.9L95,495.3L98,493.6L101,493L104,493.6L107,495.3L110,497.9L113,501.3L116,505L116,506.1L126,505L129,510L133,459L137,518L140,505L156,505L159,501.3L162,497.9L165,495.3L168,493.6L171,493L174,493.6L177,495.3L180,497.9L183,501.3L186,505L186,502L190,505.3L194,504.1L198,501.9L202,505.1L206,501.8L210,504.5L214,502L218,502.1L222,504.5L226,507.3L230,502.4L234,503.1L234,505.9L238,508.1L242,505.5L254,505L257,510L261,459L265,518L268,505L284,505L287,501.3L290,497.9L293,495.3L296,493.6L299,493L302,493.6L305,495.3L308,497.9L311,501.3L314,505L314,504.3L318,508.3L318,501.8L322,507.5L326,503.5L338,505L341,510L345,459L349,518L352,505L368,505L371,501.3L374,497.9L377,495.3L380,493.6L383,493L386,493.6L389,495.3L392,497.9L395,501.3L398,505L396,505L399,510L403,459L407,518L410,505L426,505L429,501.3L432,497.9L435,495.3L438,493.6L441,493L444,493.6L447,495.3L450,497.9L453,501.3L456,505L456,502.5L460,502.3L464,503.7L468,507.2L472,502.8L476,505.6L480,506L484,504.1L488,505.3L492,501.9L496,501.9L500,502.9L504,506.3L508,504.5L512,503.7L516,505.6L580,505" fill="none" stroke="#a8302c" stroke-width="3" stroke-linejoin="round"/>
+        <text x="580" y="532" font-size="15" text-anchor="end" fill="#a8302c">onregelmatig</text>
+      </svg>

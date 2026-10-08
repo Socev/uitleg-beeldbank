@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 420" role="img" aria-labelledby="aw-t" width="580" height="420">
+        <title id="aw-t">Doorsnede van een buisje in de longen: gezond, ontstoken bij astma, en dichtgeknepen bij een aanval.</title>
+        <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+</style><!-- kleine longen ter oriëntatie -->
+        <g stroke="#c9867a" stroke-width="2.5" fill="#f7e0d8">
+          <rect x="56" y="40" width="14" height="52" rx="6"/>
+          <path d="M55,96 C32,100 16,140 16,190 C16,232 32,252 52,247 C60,245 61,232 61,217 L61,106 Z"/>
+          <path d="M71,96 C94,100 110,140 110,190 C110,232 94,252 74,247 C66,245 65,232 65,217 L65,106 Z"/>
+        </g>
+        <path d="M63,92 L42,132 L38,172 M42,132 L28,160 M63,92 L84,132 L88,172 M84,132 L98,160" stroke="#c9867a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="86" cy="150" r="11" fill="none" stroke="#e31e26" stroke-width="3"/>
+        <path d="M97,150 C140,150 170,180 210,205" stroke="#e31e26" stroke-width="2.5" fill="none" stroke-dasharray="6 6"/>
+        <text x="63" y="282" text-anchor="middle" font-size="15" fill="#5d5753">doorsnede</text>
+        <text x="63" y="300" text-anchor="middle" font-size="15" fill="#5d5753">van een buisje</text>
+
+        <!-- gezond (ook na ontstekingsremmer) -->
+        <!-- ontstoken (ook na luchtwegverwijder) -->
+        <!-- aanval: spiertjes knijpen samen -->
+        <g>
+          <circle cx="380" cy="210" r="158" fill="#f7e0d8" stroke="#dcb0a2" stroke-width="3"/>
+          <circle cx="380" cy="210" r="134" fill="none" stroke="#a3402f" stroke-width="19" stroke-dasharray="22 6"/>
+          <path d="M504,210L502.1,220.7L497.2,230.7L491.1,239.8L485.6,248.4L481.8,257.5L479.6,267.5L477.5,278.3L473.9,288.8L467.7,297.7L458.8,303.9L448.3,307.5L437.5,309.6L427.5,311.8L418.4,315.6L409.8,321.1L400.7,327.2L390.7,332.1L380,334L369.3,332.1L359.3,327.2L350.2,321.1L341.6,315.6L332.5,311.8L322.5,309.6L311.7,307.5L301.2,303.9L292.3,297.7L286.1,288.8L282.5,278.3L280.4,267.5L278.2,257.5L274.4,248.4L268.9,239.8L262.8,230.7L257.9,220.7L256,210L257.9,199.3L262.8,189.3L268.9,180.2L274.4,171.6L278.2,162.5L280.4,152.5L282.5,141.7L286.1,131.2L292.3,122.3L301.2,116.1L311.7,112.5L322.5,110.4L332.5,108.2L341.6,104.4L350.2,98.9L359.3,92.8L369.3,87.9L380,86L390.7,87.9L400.7,92.8L409.8,98.9L418.4,104.4L427.5,108.2L437.5,110.4L448.3,112.5L458.8,116.1L467.7,122.3L473.9,131.2L477.5,141.7L479.6,152.5L481.8,162.5L485.6,171.6L491.1,180.2L497.2,189.3L502.1,199.3L504,210Z" fill="#e6866f"/>
+          <g fill="#c8402f"><circle cx="468" cy="237" r="4"/><circle cx="435" cy="284" r="4"/><circle cx="381" cy="302" r="4"/><circle cx="327" cy="285" r="4"/><circle cx="293" cy="240" r="4"/><circle cx="292" cy="183" r="4"/><circle cx="325" cy="136" r="4"/><circle cx="379" cy="118" r="4"/><circle cx="433" cy="135" r="4"/><circle cx="467" cy="180" r="4"/></g>
+          <path d="M425,210L423.2,213.8L418.6,216.8L413.3,218.9L409.5,220.7L408.5,223.3L409.9,227.2L412.1,232.5L413.2,237.9L411.8,241.8L407.9,243.2L402.5,242.1L397.2,239.9L393.3,238.5L390.7,239.5L388.9,243.3L386.8,248.6L383.8,253.2L380,255L376.2,253.2L373.2,248.6L371.1,243.3L369.3,239.5L366.7,238.5L362.8,239.9L357.5,242.1L352.1,243.2L348.2,241.8L346.8,237.9L347.9,232.5L350.1,227.3L351.5,223.3L350.5,220.7L346.7,218.9L341.4,216.8L336.8,213.8L335,210L336.8,206.2L341.4,203.2L346.7,201.1L350.5,199.3L351.5,196.7L350.1,192.8L347.9,187.5L346.8,182.1L348.2,178.2L352.1,176.8L357.5,177.9L362.8,180.1L366.7,181.5L369.3,180.5L371.1,176.7L373.2,171.4L376.2,166.8L380,165L383.8,166.8L386.8,171.4L388.9,176.7L390.7,180.5L393.3,181.5L397.2,180.1L402.5,177.9L407.9,176.8L411.8,178.2L413.2,182.1L412.1,187.5L409.9,192.8L408.5,196.7L409.5,199.3L413.3,201.1L418.6,203.2L423.2,206.2L425,210Z" fill="#e6f3fb" stroke="#c96f5a" stroke-width="2.5"/>
+          <ellipse cx="368" cy="224" rx="12" ry="8" fill="#eee2a0" stroke="#cdbb5f" stroke-width="2"/>
+          <g stroke="#a3402f" stroke-width="5" stroke-linecap="round" fill="none">
+            <path d="M380,10 L380,40 M370,30 L380,42 L390,30"/>
+            <path d="M380,410 L380,380 M370,390 L380,378 L390,390"/>
+            <path d="M196,210 L226,210 M216,200 L228,210 L216,220"/>
+            <path d="M564,210 L534,210 M544,200 L532,210 L544,220"/>
+          </g>
+        </g>
+        <!-- medicijnlabels -->
+        </svg>

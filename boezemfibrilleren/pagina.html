@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boezemfibrilleren · Uitleg</title>
+<style>
+/* uitleg.tolgaarde.nl — uitlegpagina's voor tijdens het consult. Geen externe bestanden. */
+:root {
+  --bg: #faf8f6; --kaart: #fff; --tekst: #24201f; --zacht: #5d5753; --rand: #e9e2dc;
+  --rood: #e31e26; --grijs: #8f8f8f; --blauw: #2a6f97; --blauwzacht: #e3f0f8;
+  --groen: #2f7d5b; --groenzacht: #e4f2ea; --oranje: #b85c00; --oranjezacht: #fdf0e1;
+}
+* { box-sizing: border-box; }
+html { font-size: clamp(18px, 0.9vw + 10px, 24px); }
+body { margin: 0; background: var(--bg); color: var(--tekst); line-height: 1.5;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+main { max-width: 1240px; margin: 0 auto; padding: 1.2rem 1.4rem 2rem; }
+a { color: var(--blauw); }
+
+/* kop */
+.kop { display: flex; align-items: center; gap: 1rem; padding-bottom: .9rem;
+  border-bottom: 3px solid var(--rood); margin-bottom: 1.4rem; }
+.kop img { width: 2.6rem; height: auto; }
+.kop .terug { margin-left: auto; font-weight: 600; text-decoration: none; padding: .45rem .9rem;
+  border: 2px solid var(--rand); border-radius: 999px; background: var(--kaart); color: var(--tekst); }
+.kop .terug:hover, .kop .terug:focus-visible { border-color: var(--blauw); outline: none; }
+.kop .praktijk { color: var(--zacht); font-size: .85rem; line-height: 1.25; }
+h1 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; margin: 0 0 .3rem; letter-spacing: -0.01em; }
+.inleiding { font-size: 1.15rem; color: var(--zacht); margin: 0 0 1.2rem; max-width: 46em; }
+
+/* snelmenu binnen een pagina */
+.snel { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.4rem; padding: 0; list-style: none; }
+.snel a { display: inline-block; padding: .4rem .85rem; border-radius: 999px; background: var(--kaart);
+  border: 2px solid var(--rand); text-decoration: none; color: var(--tekst); font-weight: 600; font-size: .9rem; }
+.snel a:hover, .snel a:focus-visible { border-color: var(--blauw); outline: none; }
+
+/* blokken */
+.blok { background: var(--kaart); border: 1px solid var(--rand); border-radius: 18px;
+  padding: 1.3rem 1.5rem 1.4rem; margin: 0 0 1.4rem; scroll-margin-top: 1rem; }
+.blok > h2, .twee h2 { font-size: 1.45rem; margin: 0 0 .8rem; line-height: 1.2; display: flex; align-items: center; gap: .6rem; }
+.nr { flex: none; display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%;
+  background: var(--rood); color: #fff; font-size: 1.05rem; font-weight: 700; }
+.twee { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 1.6rem; align-items: center; }
+.twee.gelijk { grid-template-columns: 1fr 1fr; align-items: start; }
+.twee.breed { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); }
+figure { margin: 0; }
+figure svg { display: block; width: 100%; height: auto; max-height: 64vh; }
+figcaption, .klein { color: var(--zacht); font-size: .85rem; }
+p { margin: 0 0 .7rem; }
+.groot { font-size: 1.2rem; }
+ul.punten { margin: 0 0 .6rem; padding-left: 1.2rem; }
+ul.punten li { margin: 0 0 .35rem; }
+ul.punten li::marker { color: var(--rood); }
+
+/* stap-voor-stap */
+.knoppen { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1rem; }
+.knoppen button { font: inherit; font-size: .95rem; font-weight: 600; cursor: pointer; color: var(--tekst);
+  padding: .55rem 1rem; min-height: 2.6rem; border-radius: 999px; border: 2px solid var(--rand); background: var(--bg); }
+.knoppen button[aria-pressed="true"] { background: var(--blauw); border-color: var(--blauw); color: #fff; }
+.knoppen button:focus-visible { outline: 3px solid #f2b233; outline-offset: 2px; }
+.stap-teksten { display: grid; }
+.stap-teksten > * { grid-area: 1 / 1; }
+.stap-teksten h3 { font-size: 1.3rem; margin: 0 0 .5rem; }
+.uit { opacity: 0; visibility: hidden; }
+[data-op] { transition: opacity .45s ease, visibility .45s; }
+
+/* kaarten en meldingen */
+.kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr)); gap: 1rem; }
+.kaart { border: 2px solid var(--rand); border-radius: 14px; padding: 1rem 1.1rem; background: var(--kaart); }
+.kaart h3 { margin: 0 0 .4rem; font-size: 1.15rem; }
+.kaart.blauw { background: var(--blauwzacht); border-color: #c4dcec; }
+.kaart.groen { background: var(--groenzacht); border-color: #c6e2d2; }
+.kaart.oranje { background: var(--oranjezacht); border-color: #f2d6b3; }
+.kaart .wanneer { font-weight: 700; color: var(--blauw); }
+.let-op { border-left: 6px solid var(--rood); background: #fdf0f0; border-radius: 10px; padding: .9rem 1.1rem; }
+.let-op h3 { margin: 0 0 .4rem; font-size: 1.15rem; }
+.bel { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; }
+.bel .kaart h3 { display: flex; gap: .5rem; align-items: center; }
+.bel .spoed { border-color: var(--rood); background: #fdf0f0; }
+.label { display: inline-block; padding: .1rem .55rem; border-radius: 6px; font-size: .8rem; font-weight: 700;
+  color: #fff; background: var(--rood); }
+.label.grijs { background: var(--zacht); }
+
+/* legenda */
+.legenda { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; list-style: none; padding: 0; margin: .6rem 0 0; font-size: .9rem; }
+.legenda li { display: flex; align-items: center; gap: .4rem; }
+.legenda svg { width: 1.3rem; height: 1.3rem; flex: none; }
+
+/* pictogrammen (prikkels) */
+.prikkels { display: grid; grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr)); gap: .8rem; list-style: none; padding: 0; margin: 0; }
+.prikkels li { display: flex; flex-direction: column; align-items: center; text-align: center; gap: .35rem;
+  padding: .8rem .5rem; border: 2px solid var(--rand); border-radius: 14px; background: var(--bg); font-weight: 600; font-size: .95rem; line-height: 1.25; }
+.prikkels svg { width: 3rem; height: 3rem; color: var(--blauw); }
+.icoon { fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+
+/* startpagina */
+.tegels { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); }
+.tegels a { display: flex; gap: 1rem; align-items: center; height: 100%; padding: 1.2rem 1.3rem;
+  background: var(--kaart); border: 2px solid var(--rand); border-radius: 18px; color: inherit; text-decoration: none;
+  transition: border-color .15s, box-shadow .15s, transform .15s; }
+.tegels a:hover, .tegels a:focus-visible { border-color: var(--blauw); box-shadow: 0 6px 18px rgba(42,111,151,.14); transform: translateY(-2px); outline: none; }
+.tegels svg { width: 4.4rem; height: 4.4rem; flex: none; }
+.tegels .naam { display: block; font-size: 1.3rem; font-weight: 700; line-height: 1.2; }
+.tegels .wat { display: block; color: var(--zacht); font-size: .95rem; margin-top: .2rem; }
+
+/* voet */
+.voet { margin-top: 1.6rem; padding-top: 1rem; border-top: 1px solid var(--rand); color: var(--zacht); font-size: .9rem; }
+.voet .meer { font-size: 1.05rem; color: var(--tekst); font-weight: 600; }
+.concept { display: inline-block; margin-top: .4rem; padding: .15rem .6rem; border-radius: 6px;
+  background: #fff4cc; color: #6b5200; font-size: .8rem; font-weight: 600; }
+
+/* tekeningen: kleuren en bewegingen */
+.zweef { animation: zweef 3.2s ease-in-out infinite alternate; transform-box: fill-box; }
+.zweef.b { animation-delay: -1.1s; } .zweef.c { animation-delay: -2.1s; } .zweef.d { animation-duration: 2.6s; }
+@keyframes zweef { from { transform: translate(-3px, -4px); } to { transform: translate(4px, 4px); } }
+.stroom { stroke-dasharray: 10 14; animation: stroom 1.4s linear infinite; }
+.stroom.traag { animation-duration: 3.2s; }
+@keyframes stroom { to { stroke-dashoffset: -48; } }
+.klop { transform-box: fill-box; transform-origin: center; animation: klop 1s ease-in-out infinite; }
+.klop.zwak { animation: klopzwak 1.25s ease-in-out infinite; }
+@keyframes klop { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.13); } }
+@keyframes klopzwak { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.04); } }
+.golf { transform-box: fill-box; transform-origin: center; animation: golf 1.6s ease-out infinite; }
+@keyframes golf { 0% { transform: scale(.1); opacity: .9; } 70% { opacity: .35; } 100% { transform: scale(1); opacity: 0; } }
+.seintje { stroke-dasharray: 26 400; animation: seintje 1.6s linear infinite; }
+@keyframes seintje { 0%, 30% { stroke-dashoffset: 26; } 75%, 100% { stroke-dashoffset: -260; } }
+.flikker { animation: flikker .9s steps(2, jump-none) infinite; }
+.flikker.b { animation-duration: .7s; animation-delay: -.3s; } .flikker.c { animation-duration: 1.1s; animation-delay: -.5s; }
+@keyframes flikker { 0% { opacity: 1; } 100% { opacity: .15; } }
+.kamerslag { animation: kamerslag 4.6s linear infinite; }
+@keyframes kamerslag { 0%, 4%, 17%, 21%, 30%, 34%, 58%, 62%, 70%, 74%, 92%, 96%, 100% { opacity: 0; }
+  2%, 19%, 32%, 60%, 72%, 94% { opacity: .55; } }
+.kamerslag-r { animation: kamerslagr 1.6s linear infinite; }
+@keyframes kamerslagr { 0%, 45%, 62%, 100% { opacity: 0; } 52% { opacity: .55; } }
+@media (prefers-reduced-motion: reduce) {
+  .zweef, .stroom, .klop, .golf, .seintje, .flikker, .kamerslag, .kamerslag-r { animation: none !important; }
+  .golf { transform: scale(.4); opacity: .5; } .seintje { stroke-dasharray: none; opacity: .7; }
+  .kamerslag, .kamerslag-r { opacity: .3; } .flikker { opacity: .8; }
+  [data-op] { transition: none; }
+}
+
+/* smal / staand */
+@media (max-width: 880px) {
+  .twee, .twee.gelijk, .twee.breed { grid-template-columns: 1fr; }
+  figure svg { max-height: none; }
+}
+
+/* afdrukken */
+@media print {
+  @page { margin: 14mm; }
+  html { font-size: 11.5pt; }
+  body { background: #fff; }
+  main { max-width: none; padding: 0; }
+  .kop .terug, .snel, .knoppen { display: none; }
+  .blok { border: 1px solid #bbb; break-inside: avoid; page-break-inside: avoid; }
+  .stap-teksten { display: block; }
+  .stap-teksten > .uit { opacity: 1; visibility: visible; margin-bottom: .6rem; }
+  figure svg { max-height: 95mm; }
+  * { animation: none !important; }
+  a { color: inherit; }
+  .voet .meer a::after { content: " (" attr(href) ")"; font-weight: 400; }
+}
+</style>
+</head>
+<body>
+<main>
+<header class="kop"><span class="praktijk">Uitleg-beeldbank</span></header>
+
+<h1>Boezemfibrilleren</h1>
+<p class="inleiding">Bij boezemfibrilleren klopt je hart onregelmatig, en vaak snel. Een andere naam is atriumfibrilleren. Het is niet direct gevaarlijk, maar de kans op een beroerte is groter.</p>
+<ul class="snel">
+  <li><a href="#ritme">Wat gebeurt er?</a></li>
+  <li><a href="#behandeling">Behandeling</a></li>
+  <li><a href="#zelf">Zelf doen</a></li>
+  <li><a href="#bellen">Wanneer bellen?</a></li>
+</ul>
+
+<section class="blok" id="ritme" data-stappen>
+  <h2><span class="nr">1</span>Wat gebeurt er in je hart?</h2>
+  <div class="knoppen" role="group" aria-label="Stappen">
+    <button type="button" data-stap="1">Normaal ritme</button>
+    <button type="button" data-stap="2">Boezemfibrilleren</button>
+    <button type="button" data-stap="3">Stolsel</button>
+    <button type="button" data-stap="4">Bloedverdunner</button>
+  </div>
+  <div class="twee">
+    <figure>
+      <svg viewBox="0 0 620 540" role="img" aria-labelledby="af-t">
+        <title id="af-t">Schematisch hart met twee boezems boven en twee kamers onder. Normaal geeft de sinusknoop een regelmatig seintje. Bij boezemfibrilleren lopen er veel seintjes door elkaar in de boezems.</title>
+        <defs>
+          <clipPath id="boezemclip"><path d="M120,110 C120,60 260,60 285,100 C310,60 450,60 455,115 L458,225 L120,225 Z"/></clipPath>
+          <clipPath id="kamerclip"><path d="M120,225 L458,225 L460,230 C460,340 370,420 310,450 C240,420 125,350 118,230 Z"/></clipPath>
+          <marker id="pijlrood" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8e1b1b"/></marker>
+        </defs>
+        <!-- hart -->
+        <path d="M450,120 C478,100 505,125 485,148 C475,158 460,152 456,142 Z" fill="#f4c6bd" stroke="#c9675b" stroke-width="4"/>
+        <path d="M120,110 C120,60 260,60 285,100 C310,60 450,60 455,115 L460,230 C460,340 370,420 310,450 C240,420 125,350 118,230 Z" fill="#f4c6bd" stroke="#c9675b" stroke-width="4"/>
+        <path d="M120,225 L458,225 M287,98 L287,225 M287,225 C292,320 300,390 310,448" stroke="#c9675b" stroke-width="4" fill="none"/>
+        <g font-size="19" font-weight="600" fill="#8a4035" text-anchor="middle">
+          <text x="205" y="180">boezem</text><text x="372" y="180">boezem</text>
+          <text x="205" y="345">kamer</text><text x="372" y="345">kamer</text>
+        </g>
+        <text x="497" y="176" font-size="15" fill="#8a4035" text-anchor="middle" data-op="1,2">hartoor</text>
+        <!-- normaal ritme -->
+        <g data-op="1">
+          <g clip-path="url(#boezemclip)" fill="none" stroke="#f2b233" stroke-width="7">
+            <circle class="golf" cx="165" cy="110" r="300"/>
+          </g>
+          <g fill="none" stroke="#f2b233" stroke-width="6" stroke-linecap="round">
+            <path class="seintje" d="M287,236 C292,320 300,390 310,440"/>
+            <path class="seintje" d="M287,236 C292,300 280,330 250,350 C200,370 150,320 135,250"/>
+            <path class="seintje" d="M287,236 C300,300 320,330 360,345 C410,350 445,300 452,245"/>
+          </g>
+          <path d="M120,225 L458,225 L460,230 C460,340 370,420 310,450 C240,420 125,350 118,230 Z" fill="#d9443f" class="kamerslag-r"/>
+        </g>
+        <!-- boezemfibrilleren -->
+        <g data-op="2,3,4">
+          <g fill="none" stroke="#e8a21a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+            <path class="flikker" d="M140,140 l10,-10 l8,12 l10,-11 l9,10"/>
+            <path class="flikker b" d="M200,105 l9,9 l9,-11 l9,10 l10,-9"/>
+            <path class="flikker c" d="M150,200 l10,-9 l9,10 l9,-11 l10,9"/>
+            <path class="flikker b" d="M230,150 l8,-10 l9,11 l9,-10 l9,9"/>
+            <path class="flikker" d="M310,120 l10,10 l8,-11 l10,10 l9,-9"/>
+            <path class="flikker c" d="M380,100 l9,-9 l9,11 l9,-10 l9,9"/>
+            <path class="flikker b" d="M330,200 l10,-10 l9,10 l9,-11 l9,9"/>
+            <path class="flikker" d="M400,150 l9,9 l10,-11 l9,10 l9,-9"/>
+          </g>
+          <path d="M120,225 L458,225 L460,230 C460,340 370,420 310,450 C240,420 125,350 118,230 Z" fill="#d9443f" class="kamerslag"/>
+        </g>
+        <!-- sinusknoop en AV-knoop -->
+        <circle cx="165" cy="110" r="11" fill="#f2b233" stroke="#a8740f" stroke-width="2.5"/>
+        <circle cx="287" cy="236" r="9" fill="#f2b233" stroke="#a8740f" stroke-width="2.5"/>
+        <path d="M152,104 L104,78" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="66" y="44" font-size="16" font-weight="700" fill="#24201f" text-anchor="middle">sinusknoop</text>
+        <text x="66" y="64" font-size="14" fill="#5d5753" text-anchor="middle">(gangmaker)</text>
+        <path d="M278,240 L90,262" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="66" y="282" font-size="16" font-weight="700" fill="#24201f" text-anchor="middle">AV-knoop</text>
+        <text x="66" y="302" font-size="14" fill="#5d5753" text-anchor="middle">(doorgeefluik)</text>
+        <!-- stolsel -->
+        <g data-op="3">
+          <g fill="#8e1b1b"><circle cx="476" cy="128" r="9"/><circle cx="468" cy="138" r="7"/><circle cx="485" cy="137" r="6"/></g>
+          <path d="M492,116 C520,96 538,84 548,74" stroke="#8e1b1b" stroke-width="4" fill="none" stroke-dasharray="7 6" marker-end="url(#pijlrood)"/>
+          <path d="M538,46 C530,30 548,16 562,24 C572,12 594,18 594,34 C606,40 604,60 590,64 C586,76 566,78 558,70 C544,74 532,62 538,46 Z" fill="#f3e3ef" stroke="#9a5b8c" stroke-width="3"/>
+          <path d="M556,36 C566,40 568,52 578,52 M572,28 C576,36 586,38 590,46" stroke="#9a5b8c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <text x="528" y="30" font-size="17" font-weight="700" fill="#8e1b1b" text-anchor="end">beroerte</text>
+          <text x="528" y="50" font-size="14" fill="#5d5753" text-anchor="end">(hersenen)</text>
+        </g>
+        <!-- bloedverdunner -->
+        <g data-op="4">
+          <g fill="#8e1b1b" opacity=".18"><circle cx="476" cy="128" r="9"/><circle cx="468" cy="138" r="7"/><circle cx="485" cy="137" r="6"/></g>
+          <path d="M520,62 C536,70 552,66 560,60 C568,66 584,70 600,62 C600,96 584,114 560,126 C536,114 520,96 520,62 Z" fill="#2a6f97"/>
+          <path d="M546,92 L556,102 L576,80" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="560" y="150" font-size="16" font-weight="700" fill="#2a6f97" text-anchor="middle">bloed-</text>
+          <text x="560" y="170" font-size="16" font-weight="700" fill="#2a6f97" text-anchor="middle">verdunner</text>
+        </g>
+        <!-- hartfilmpje -->
+        <text x="40" y="452" font-size="15" fill="#5d5753">hartfilmpje</text>
+        <path d="M40,505L48,505L50,502.3L52,500.1L54,498.5L56,498L58,498.5L60,500.1L62,502.3L64,505L72,505L75,510L79,459L83,518L86,505L102,505L105,501.3L108,497.9L111,495.3L114,493.6L117,493L120,493.6L123,495.3L126,497.9L129,501.3L132,505L136,505L144,505L146,502.3L148,500.1L150,498.5L152,498L154,498.5L156,500.1L158,502.3L160,505L168,505L171,510L175,459L179,518L182,505L198,505L201,501.3L204,497.9L207,495.3L210,493.6L213,493L216,493.6L219,495.3L222,497.9L225,501.3L228,505L232,505L240,505L242,502.3L244,500.1L246,498.5L248,498L250,498.5L252,500.1L254,502.3L256,505L264,505L267,510L271,459L275,518L278,505L294,505L297,501.3L300,497.9L303,495.3L306,493.6L309,493L312,493.6L315,495.3L318,497.9L321,501.3L324,505L328,505L336,505L338,502.3L340,500.1L342,498.5L344,498L346,498.5L348,500.1L350,502.3L352,505L360,505L363,510L367,459L371,518L374,505L390,505L393,501.3L396,497.9L399,495.3L402,493.6L405,493L408,493.6L411,495.3L414,497.9L417,501.3L420,505L424,505L432,505L434,502.3L436,500.1L438,498.5L440,498L442,498.5L444,500.1L446,502.3L448,505L456,505L459,510L463,459L467,518L470,505L486,505L489,501.3L492,497.9L495,495.3L498,493.6L501,493L504,493.6L507,495.3L510,497.9L513,501.3L516,505L520,505L580,505" fill="none" stroke="#2f7d5b" stroke-width="3" stroke-linejoin="round" data-op="1"/>
+        <path d="M40,505L40,503.8L44,502.6L56,505L59,510L63,459L67,518L70,505L86,505L89,501.3L92,497.9L95,495.3L98,493.6L101,493L104,493.6L107,495.3L110,497.9L113,501.3L116,505L116,506.1L126,505L129,510L133,459L137,518L140,505L156,505L159,501.3L162,497.9L165,495.3L168,493.6L171,493L174,493.6L177,495.3L180,497.9L183,501.3L186,505L186,502L190,505.3L194,504.1L198,501.9L202,505.1L206,501.8L210,504.5L214,502L218,502.1L222,504.5L226,507.3L230,502.4L234,503.1L234,505.9L238,508.1L242,505.5L254,505L257,510L261,459L265,518L268,505L284,505L287,501.3L290,497.9L293,495.3L296,493.6L299,493L302,493.6L305,495.3L308,497.9L311,501.3L314,505L314,504.3L318,508.3L318,501.8L322,507.5L326,503.5L338,505L341,510L345,459L349,518L352,505L368,505L371,501.3L374,497.9L377,495.3L380,493.6L383,493L386,493.6L389,495.3L392,497.9L395,501.3L398,505L396,505L399,510L403,459L407,518L410,505L426,505L429,501.3L432,497.9L435,495.3L438,493.6L441,493L444,493.6L447,495.3L450,497.9L453,501.3L456,505L456,502.5L460,502.3L464,503.7L468,507.2L472,502.8L476,505.6L480,506L484,504.1L488,505.3L492,501.9L496,501.9L500,502.9L504,506.3L508,504.5L512,503.7L516,505.6L580,505" fill="none" stroke="#a8302c" stroke-width="3" stroke-linejoin="round" data-op="2,3,4"/>
+        <text x="580" y="532" font-size="15" text-anchor="end" fill="#2f7d5b" data-op="1">regelmatig</text>
+        <text x="580" y="532" font-size="15" text-anchor="end" fill="#a8302c" data-op="2,3,4">onregelmatig</text>
+      </svg>
+    </figure>
+    <div class="stap-teksten">
+      <div data-op="1"><h3>Normaal ritme</h3>
+        <p class="groot">De <strong>sinusknoop</strong> is de gangmaker van je hart. Hij geeft steeds een seintje: een klein stroomstootje.</p>
+        <p class="groot">Eerst knijpen de <strong>boezems</strong>, dan de <strong>kamers</strong>. Je hart klopt regelmatig.</p></div>
+      <div data-op="2"><h3>Boezemfibrilleren</h3>
+        <p class="groot">In de boezems lopen <strong>veel seintjes door elkaar</strong>. De boezems trillen in plaats van goed te knijpen.</p>
+        <p class="groot">De AV-knoop laat de seintjes onregelmatig door. Je hart klopt <strong>onregelmatig</strong>, en vaak snel.</p>
+        <p>Je kunt hartkloppingen voelen, moe of duizelig zijn. Sommige mensen merken er niets van.</p></div>
+      <div data-op="3"><h3>Kans op een stolsel</h3>
+        <p class="groot">Omdat de boezems trillen, stroomt het bloed langzamer. Vooral in het <strong>hartoor</strong> (een klein zakje aan de boezem) kan dan een <strong>stolsel</strong> ontstaan.</p>
+        <p class="groot">Een stolsel kan naar de hersenen gaan. Dat geeft een <strong>beroerte</strong> (herseninfarct).</p></div>
+      <div data-op="4"><h3>Een bloedverdunner beschermt</h3>
+        <p class="groot">Een bloedverdunner maakt de kans op een stolsel en een beroerte <strong>kleiner</strong>. Je hart kan wel onregelmatig blijven.</p>
+        <p>Niet iedereen heeft een bloedverdunner nodig. Dat hangt af van je leeftijd en andere ziektes. Je huisarts rekent je risico uit en bespreekt het met je.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blok" id="behandeling">
+  <h2><span class="nr">2</span>De behandeling</h2>
+  <div class="kaarten">
+    <div class="kaart blauw">
+      <h3>1. Beroerte voorkomen</h3>
+      <p>Met een bloedverdunner, als jouw risico groot genoeg is.</p>
+    </div>
+    <div class="kaart groen">
+      <h3>2. Hartslag rustiger</h3>
+      <p class="wanneer">Als je last hebt van de snelle hartslag</p>
+      <p>Een medicijn laat je hart langzamer kloppen. Het ritme mag onregelmatig blijven. Je voelt je rustiger en bent minder snel moe.</p>
+    </div>
+    <div class="kaart">
+      <h3>3. Ritme weer normaal</h3>
+      <p class="wanneer">Soms</p>
+      <p>Soms probeert de hartspecialist (cardioloog) het ritme weer regelmatig te krijgen. Met medicijnen, een stroomstoot, of een behandeling via een bloedvat.</p>
+    </div>
+  </div>
+</section>
+
+<section class="blok" id="zelf">
+  <h2><span class="nr">3</span>Wat kun je zelf doen?</h2>
+  <p class="groot">Gezond leven maakt de klachten minder. En het helpt je hart en bloedvaten.</p>
+  <div class="kaarten">
+    <div class="kaart groen"><h3>Bewegen</h3><p>Minstens 2,5 uur per week, bijvoorbeeld wandelen of fietsen.</p></div>
+    <div class="kaart"><h3>Geen alcohol</h3><p>Alcohol kan een aanval uitlokken en maakt het erger.</p></div>
+    <div class="kaart"><h3>Niet roken</h3><p>Vraag hulp bij stoppen. Dan lukt het vaker.</p></div>
+    <div class="kaart"><h3>Gewicht en bloeddruk</h3><p>Val af als je te zwaar bent. Laat een hoge bloeddruk behandelen.</p></div>
+    <div class="kaart"><h3>Snurken</h3><p>Snurk je hard en ben je overdag erg moe? Zeg het je huisarts. Adempauzes in je slaap kunnen boezemfibrilleren erger maken.</p></div>
+    <div class="kaart oranje"><h3>Met een bloedverdunner</h3><p>Geen ibuprofen, naproxen of diclofenac. Vertel je tandarts en apotheek dat je een bloedverdunner gebruikt.</p></div>
+  </div>
+</section>
+
+<section class="blok" id="bellen">
+  <h2><span class="nr">4</span>Wanneer bellen?</h2>
+  <div class="bel">
+    <div class="kaart spoed">
+      <h3><span class="label">112</span> Tekenen van een beroerte</h3>
+      <p>Opeens een scheve mond, een arm of been dat verlamd voelt, moeilijk praten, minder of dubbel zien, of in de war. <strong>Bel meteen 112.</strong></p>
+    </div>
+    <div class="kaart spoed">
+      <h3><span class="label">Spoed</span> Bel meteen je huisarts</h3>
+      <p>Of de huisartsenpost: opeens pijn op de borst, (bijna) flauwvallen, erg benauwd, of een heel snelle hartslag die niet zakt.</p>
+    </div>
+    <div class="kaart spoed">
+      <h3><span class="label">Spoed</span> Met een bloedverdunner</h3>
+      <p>Bel direct bij: bloed ophoesten of overgeven, zwarte ontlasting, bloed in je plas, een harde val op je hoofd, of een bloeding die niet stopt.</p>
+    </div>
+    <div class="kaart">
+      <h3>Afspraak maken</h3>
+      <ul class="punten">
+        <li>Je houdt veel klachten, ook met medicijnen.</li>
+        <li>Je klachten waren weg en komen terug.</li>
+        <li>Je hebt last van bijwerkingen of vragen over je medicijnen.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<footer class="voet">
+<p class="meer">Meer lezen: <a href="https://www.thuisarts.nl/boezem-fibrilleren" target="_blank" rel="noopener noreferrer">thuisarts.nl/boezem-fibrilleren</a></p>
+<p>Deze uitleg is algemeen. Wat voor jou geldt, bespreek je met je huisarts.</p>
+<p class="klein">Tekst en tekeningen: Huisartsenpraktijk Tolgaarde / Socev, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.nl">CC BY-SA 4.0</a>.</p>
+</footer>
+</main>
+<script>
+// Stap-voor-stap-knoppen. Elk blok met data-stappen heeft knoppen (data-stap="n")
+// en onderdelen met data-op="1,3": die zijn alleen zichtbaar bij die stappen.
+(function () {
+  document.querySelectorAll("[data-stappen]").forEach(function (doos) {
+    var knoppen = doos.querySelectorAll("button[data-stap]");
+    function zet(n) {
+      doos.querySelectorAll("[data-op]").forEach(function (el) {
+        var aan = el.getAttribute("data-op").split(",").indexOf(String(n)) !== -1;
+        el.classList.toggle("uit", !aan);
+        el.setAttribute("aria-hidden", aan ? "false" : "true");
+      });
+      knoppen.forEach(function (k) {
+        k.setAttribute("aria-pressed", k.getAttribute("data-stap") === String(n) ? "true" : "false");
+      });
+    }
+    knoppen.forEach(function (k) {
+      k.addEventListener("click", function () { zet(Number(k.getAttribute("data-stap"))); });
+    });
+    zet(Number(doos.getAttribute("data-start") || 1));
+  });
+})();
+</script>
+</body>
+</html>
+

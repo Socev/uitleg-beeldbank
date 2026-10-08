@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" role="img" aria-labelledby="copd-t" width="600" height="420">
+        <title id="copd-t">Een luchtbuisje met longblaasjes. Gezond: ruime buisjes en veel kleine blaasjes. COPD: nauwe buisjes met slijm en kapotte, grote blaasjes.</title>
+        <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+</style><!-- gezond -->
+        <!-- COPD -->
+        <g>
+          <g fill="#f7d3c8" stroke="#d98f7d" stroke-width="2.5">
+            <path d="M350,95 C340,60 380,48 405,58 C432,68 440,98 425,118 C410,138 360,132 350,95 Z"/>
+            <circle cx="420" cy="58" r="12"/>
+            <path d="M360,205 C352,175 392,166 420,178 C446,190 444,228 420,240 C392,252 366,236 360,205 Z"/>
+            <path d="M268,320 C262,296 300,286 322,298 C344,310 342,346 318,356 C292,366 272,348 268,320 Z"/>
+            <circle cx="276" cy="356" r="11"/>
+          </g>
+          <g stroke="#d98f7d" stroke-width="2.5" stroke-linecap="round">
+            <path d="M386,58 L392,74 M410,128 L404,114 M394,170 L396,184 M396,248 L400,234 M300,288 L302,300 M318,354 L312,342"/>
+          </g>
+          <g fill="none" stroke-linecap="round">
+            <g stroke="#df8a74" stroke-width="34">
+              <path d="M40,30 C90,80 140,130 200,165"/><path d="M200,165 C250,140 290,118 345,103"/><path d="M200,165 C260,178 300,195 356,207"/><path d="M200,165 C222,212 240,250 276,300"/>
+            </g>
+            <g stroke="#e6f3fb" stroke-width="10">
+              <path d="M40,30 C90,80 140,130 200,165"/><path d="M200,165 C250,140 290,118 345,103"/><path d="M200,165 C260,178 300,195 356,207"/><path d="M200,165 C222,212 240,250 276,300"/>
+            </g>
+          </g>
+          <g fill="#eee2a0" stroke="#cdbb5f" stroke-width="1.8">
+            <ellipse cx="118" cy="101" rx="12" ry="7" transform="rotate(40 118 101)"/>
+            <ellipse cx="272" cy="134" rx="12" ry="7" transform="rotate(-18 272 134)"/>
+            <ellipse cx="232" cy="234" rx="11" ry="6.5" transform="rotate(60 232 234)"/>
+          </g>
+          <text x="20" y="215" font-size="18" font-weight="600" fill="#a3402f">nauwer,</text><text x="20" y="237" font-size="18" font-weight="600" fill="#a3402f">meer slijm</text><path d="M60,198 L100,112" stroke="#8f8f8f" stroke-width="2"/>
+          <text x="455" y="300" font-size="18" font-weight="600" fill="#a3402f">blaasjes kapot</text>
+          <path d="M452,293 C430,280 425,262 420,248" stroke="#8f8f8f" stroke-width="2" fill="none"/>
+          <text x="455" y="322" font-size="15" fill="#5d5753">minder plek voor</text>
+          <text x="455" y="340" font-size="15" fill="#5d5753">zuurstof</text>
+        </g>
+      </svg>
