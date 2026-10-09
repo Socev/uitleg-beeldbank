@@ -139,6 +139,8 @@ Blijf je veel klachten houden, ook na bewegen, oefenen en pijnstillers? Kun je h
 - Een kniebrace of inlegzolen. Het is niet bewezen dat die helpen.
 - Een kijkoperatie om de knie 'schoon te maken'. Dat helpt niet bij artrose. Alleen als je knie op slot zit, kan een kijkoperatie soms helpen.
 
+Meer over een gescheurde meniscus: zie [meniscusklachten](../meniscus/tekst.md).
+
 ## 5. Wanneer bellen?
 
 #### **Spoed** — Pijnlijke knie en koorts
