@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 470" role="img" aria-labelledby="ab-t" width="600" height="470">
+        <title id="ab-t">Waar komt het antibioticum terecht? Nitrofurantoïne en fosfomycine komen vooral in de plas in de blaas, en te weinig in de nier en de prostaat. Middelen zoals ciprofloxacine, amoxicilline met clavulaanzuur en cotrimoxazol komen ook in het weefsel van nier en prostaat.</title>
+        <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+</style><!-- nieren -->
+        <path d="M150,30 C100,30 80,80 80,125 C80,175 105,215 150,215 C185,215 195,190 185,165 C178,150 178,100 185,85 C195,60 185,30 150,30 Z" fill="#e9a493" stroke="#b5705f" stroke-width="4"/>
+        <path d="M450,30 C500,30 520,80 520,125 C520,175 495,215 450,215 C415,215 405,190 415,165 C422,150 422,100 415,85 C405,60 415,30 450,30 Z" fill="#e9a493" stroke="#b5705f" stroke-width="4"/>
+        <g fill="none" stroke-linecap="round">
+          <path d="M184,126 C215,140 225,210 236,260 C240,280 246,296 256,310" stroke="#d39a8a" stroke-width="11"/>
+          <path d="M416,126 C385,140 375,210 364,260 C360,280 354,296 344,310" stroke="#d39a8a" stroke-width="11"/>
+        </g>
+        <!-- prostaat en blaas -->
+        <ellipse cx="300" cy="422" rx="40" ry="26" fill="#f2c4b0" stroke="#c9675b" stroke-width="3"/>
+        <ellipse cx="300" cy="346" rx="92" ry="58" fill="#fbefb8" stroke="#d39a8a" stroke-width="14"/>
+        <rect x="293" y="400" width="14" height="64" rx="4" fill="#fbefb8" stroke="#d39a8a" stroke-width="3"/>
+        <!-- stap 1: middel alleen in de plas in de blaas -->
+        <g fill="#2a6f97">
+          <circle cx="250" cy="330" r="6"/><circle cx="276" cy="356" r="6"/><circle cx="300" cy="322" r="6"/><circle cx="326" cy="358" r="6"/>
+          <circle cx="352" cy="330" r="6"/><circle cx="262" cy="374" r="6"/><circle cx="340" cy="378" r="6"/><circle cx="300" cy="380" r="6"/>
+          <circle cx="226" cy="352" r="6"/><circle cx="374" cy="352" r="6"/><circle cx="288" cy="346" r="6"/><circle cx="316" cy="338" r="6"/>
+        </g>
+        <!-- stap 2: middel ook in het weefsel -->
+        <!-- vinkjes en kruisjes -->
+        <g>
+          <circle cx="410" cy="300" r="17" fill="#2f7d5b"/><path d="M401,300 L408,307 L420,293" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="40" cy="120" r="17" fill="#a8302c"/><path d="M33,113 L47,127 M47,113 L33,127" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="560" cy="120" r="17" fill="#a8302c"/><path d="M553,113 L567,127 M567,113 L553,127" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="362" cy="430" r="15" fill="#a8302c"/><path d="M356,424 L368,436 M368,424 L356,436" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+          <text x="300" y="60" text-anchor="middle" font-size="17" font-weight="700" fill="#2a6f97">komt vooral in de plas</text>
+          <text x="300" y="82" text-anchor="middle" font-size="17" font-weight="700" fill="#2a6f97">in de blaas</text>
+        </g>
+        <text x="150" y="240" text-anchor="middle" font-size="16" font-weight="700" fill="#8a4035">nier</text>
+        <text x="450" y="240" text-anchor="middle" font-size="16" font-weight="700" fill="#8a4035">nier</text>
+        <text x="196" y="352" text-anchor="end" font-size="18" font-weight="700" fill="#8a4035">blaas</text>
+        <text x="384" y="458" font-size="15" fill="#5d5753">prostaat (bij mannen)</text>
+      </svg>

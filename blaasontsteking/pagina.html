@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blaasontsteking en urineweginfectie · Uitleg</title>
+<style>
+/* uitleg.tolgaarde.nl — uitlegpagina's voor tijdens het consult. Geen externe bestanden. */
+:root {
+  --bg: #faf8f6; --kaart: #fff; --tekst: #24201f; --zacht: #5d5753; --rand: #e9e2dc;
+  --rood: #e31e26; --grijs: #8f8f8f; --blauw: #2a6f97; --blauwzacht: #e3f0f8;
+  --groen: #2f7d5b; --groenzacht: #e4f2ea; --oranje: #b85c00; --oranjezacht: #fdf0e1;
+}
+* { box-sizing: border-box; }
+html { font-size: clamp(18px, 0.9vw + 10px, 24px); }
+body { margin: 0; background: var(--bg); color: var(--tekst); line-height: 1.5;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+main { max-width: 1240px; margin: 0 auto; padding: 1.2rem 1.4rem 2rem; }
+a { color: var(--blauw); }
+
+/* kop */
+.kop { display: flex; align-items: center; gap: 1rem; padding-bottom: .9rem;
+  border-bottom: 3px solid var(--rood); margin-bottom: 1.4rem; }
+.kop img { width: 2.6rem; height: auto; }
+.kop .terug { margin-left: auto; font-weight: 600; text-decoration: none; padding: .45rem .9rem;
+  border: 2px solid var(--rand); border-radius: 999px; background: var(--kaart); color: var(--tekst); }
+.kop .terug:hover, .kop .terug:focus-visible { border-color: var(--blauw); outline: none; }
+.kop .praktijk { color: var(--zacht); font-size: .85rem; line-height: 1.25; }
+h1 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; margin: 0 0 .3rem; letter-spacing: -0.01em; }
+.inleiding { font-size: 1.15rem; color: var(--zacht); margin: 0 0 1.2rem; max-width: 46em; }
+
+/* snelmenu binnen een pagina */
+.snel { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.4rem; padding: 0; list-style: none; }
+.snel a { display: inline-block; padding: .4rem .85rem; border-radius: 999px; background: var(--kaart);
+  border: 2px solid var(--rand); text-decoration: none; color: var(--tekst); font-weight: 600; font-size: .9rem; }
+.snel a:hover, .snel a:focus-visible { border-color: var(--blauw); outline: none; }
+
+/* blokken */
+.blok { background: var(--kaart); border: 1px solid var(--rand); border-radius: 18px;
+  padding: 1.3rem 1.5rem 1.4rem; margin: 0 0 1.4rem; scroll-margin-top: 1rem; }
+.blok > h2, .twee h2 { font-size: 1.45rem; margin: 0 0 .8rem; line-height: 1.2; display: flex; align-items: center; gap: .6rem; }
+.nr { flex: none; display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%;
+  background: var(--rood); color: #fff; font-size: 1.05rem; font-weight: 700; }
+.twee { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 1.6rem; align-items: center; }
+.twee.gelijk { grid-template-columns: 1fr 1fr; align-items: start; }
+.twee.breed { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); }
+figure { margin: 0; }
+figure svg { display: block; width: 100%; height: auto; max-height: 64vh; }
+figcaption, .klein { color: var(--zacht); font-size: .85rem; }
+p { margin: 0 0 .7rem; }
+.groot { font-size: 1.2rem; }
+ul.punten { margin: 0 0 .6rem; padding-left: 1.2rem; }
+ul.punten li { margin: 0 0 .35rem; }
+ul.punten li::marker { color: var(--rood); }
+
+/* stap-voor-stap */
+.knoppen { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1rem; }
+.knoppen button { font: inherit; font-size: .95rem; font-weight: 600; cursor: pointer; color: var(--tekst);
+  padding: .55rem 1rem; min-height: 2.6rem; border-radius: 999px; border: 2px solid var(--rand); background: var(--bg); }
+.knoppen button[aria-pressed="true"] { background: var(--blauw); border-color: var(--blauw); color: #fff; }
+.knoppen button:focus-visible { outline: 3px solid #f2b233; outline-offset: 2px; }
+.stap-teksten { display: grid; }
+.stap-teksten > * { grid-area: 1 / 1; }
+.stap-teksten h3 { font-size: 1.3rem; margin: 0 0 .5rem; }
+.uit { opacity: 0; visibility: hidden; }
+[data-op] { transition: opacity .45s ease, visibility .45s; }
+
+/* kaarten en meldingen */
+.kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr)); gap: 1rem; }
+.kaart { border: 2px solid var(--rand); border-radius: 14px; padding: 1rem 1.1rem; background: var(--kaart); }
+.kaart h3 { margin: 0 0 .4rem; font-size: 1.15rem; }
+.kaart.blauw { background: var(--blauwzacht); border-color: #c4dcec; }
+.kaart.groen { background: var(--groenzacht); border-color: #c6e2d2; }
+.kaart.oranje { background: var(--oranjezacht); border-color: #f2d6b3; }
+.kaart .wanneer { font-weight: 700; color: var(--blauw); }
+.let-op { border-left: 6px solid var(--rood); background: #fdf0f0; border-radius: 10px; padding: .9rem 1.1rem; }
+.let-op h3 { margin: 0 0 .4rem; font-size: 1.15rem; }
+.bel { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; }
+.bel .kaart h3 { display: flex; gap: .5rem; align-items: center; }
+.bel .spoed { border-color: var(--rood); background: #fdf0f0; }
+.label { display: inline-block; padding: .1rem .55rem; border-radius: 6px; font-size: .8rem; font-weight: 700;
+  color: #fff; background: var(--rood); }
+.label.grijs { background: var(--zacht); }
+
+/* legenda */
+.legenda { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; list-style: none; padding: 0; margin: .6rem 0 0; font-size: .9rem; }
+.legenda li { display: flex; align-items: center; gap: .4rem; }
+.legenda svg { width: 1.3rem; height: 1.3rem; flex: none; }
+
+/* pictogrammen (prikkels) */
+.prikkels { display: grid; grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr)); gap: .8rem; list-style: none; padding: 0; margin: 0; }
+.prikkels li { display: flex; flex-direction: column; align-items: center; text-align: center; gap: .35rem;
+  padding: .8rem .5rem; border: 2px solid var(--rand); border-radius: 14px; background: var(--bg); font-weight: 600; font-size: .95rem; line-height: 1.25; }
+.prikkels svg { width: 3rem; height: 3rem; color: var(--blauw); }
+.icoon { fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+
+/* startpagina */
+.tegels { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); }
+.tegels a { display: flex; gap: 1rem; align-items: center; height: 100%; padding: 1.2rem 1.3rem;
+  background: var(--kaart); border: 2px solid var(--rand); border-radius: 18px; color: inherit; text-decoration: none;
+  transition: border-color .15s, box-shadow .15s, transform .15s; }
+.tegels a:hover, .tegels a:focus-visible { border-color: var(--blauw); box-shadow: 0 6px 18px rgba(42,111,151,.14); transform: translateY(-2px); outline: none; }
+.tegels svg { width: 4.4rem; height: 4.4rem; flex: none; }
+.tegels .naam { display: block; font-size: 1.3rem; font-weight: 700; line-height: 1.2; }
+.tegels .wat { display: block; color: var(--zacht); font-size: .95rem; margin-top: .2rem; }
+
+/* voet */
+.voet { margin-top: 1.6rem; padding-top: 1rem; border-top: 1px solid var(--rand); color: var(--zacht); font-size: .9rem; }
+.voet .meer { font-size: 1.05rem; color: var(--tekst); font-weight: 600; }
+.concept { display: inline-block; margin-top: .4rem; padding: .15rem .6rem; border-radius: 6px;
+  background: #fff4cc; color: #6b5200; font-size: .8rem; font-weight: 600; }
+
+/* tekeningen: kleuren en bewegingen */
+.zweef { animation: zweef 3.2s ease-in-out infinite alternate; transform-box: fill-box; }
+.zweef.b { animation-delay: -1.1s; } .zweef.c { animation-delay: -2.1s; } .zweef.d { animation-duration: 2.6s; }
+@keyframes zweef { from { transform: translate(-3px, -4px); } to { transform: translate(4px, 4px); } }
+.stroom { stroke-dasharray: 10 14; animation: stroom 1.4s linear infinite; }
+.stroom.traag { animation-duration: 3.2s; }
+@keyframes stroom { to { stroke-dashoffset: -48; } }
+.klop { transform-box: fill-box; transform-origin: center; animation: klop 1s ease-in-out infinite; }
+.klop.zwak { animation: klopzwak 1.25s ease-in-out infinite; }
+@keyframes klop { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.13); } }
+@keyframes klopzwak { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.04); } }
+.golf { transform-box: fill-box; transform-origin: center; animation: golf 1.6s ease-out infinite; }
+@keyframes golf { 0% { transform: scale(.1); opacity: .9; } 70% { opacity: .35; } 100% { transform: scale(1); opacity: 0; } }
+.seintje { stroke-dasharray: 26 400; animation: seintje 1.6s linear infinite; }
+@keyframes seintje { 0%, 30% { stroke-dashoffset: 26; } 75%, 100% { stroke-dashoffset: -260; } }
+.flikker { animation: flikker .9s steps(2, jump-none) infinite; }
+.flikker.b { animation-duration: .7s; animation-delay: -.3s; } .flikker.c { animation-duration: 1.1s; animation-delay: -.5s; }
+@keyframes flikker { 0% { opacity: 1; } 100% { opacity: .15; } }
+.kamerslag { animation: kamerslag 4.6s linear infinite; }
+@keyframes kamerslag { 0%, 4%, 17%, 21%, 30%, 34%, 58%, 62%, 70%, 74%, 92%, 96%, 100% { opacity: 0; }
+  2%, 19%, 32%, 60%, 72%, 94% { opacity: .55; } }
+.kamerslag-r { animation: kamerslagr 1.6s linear infinite; }
+@keyframes kamerslagr { 0%, 45%, 62%, 100% { opacity: 0; } 52% { opacity: .55; } }
+@media (prefers-reduced-motion: reduce) {
+  .zweef, .stroom, .klop, .golf, .seintje, .flikker, .kamerslag, .kamerslag-r { animation: none !important; }
+  .golf { transform: scale(.4); opacity: .5; } .seintje { stroke-dasharray: none; opacity: .7; }
+  .kamerslag, .kamerslag-r { opacity: .3; } .flikker { opacity: .8; }
+  [data-op] { transition: none; }
+}
+
+/* smal / staand */
+@media (max-width: 880px) {
+  .twee, .twee.gelijk, .twee.breed { grid-template-columns: 1fr; }
+  figure svg { max-height: none; }
+}
+
+/* afdrukken */
+@media print {
+  @page { margin: 14mm; }
+  html { font-size: 11.5pt; }
+  body { background: #fff; }
+  main { max-width: none; padding: 0; }
+  .kop .terug, .snel, .knoppen { display: none; }
+  .blok { border: 1px solid #bbb; break-inside: avoid; page-break-inside: avoid; }
+  .stap-teksten { display: block; }
+  .stap-teksten > .uit { opacity: 1; visibility: visible; margin-bottom: .6rem; }
+  figure svg { max-height: 95mm; }
+  * { animation: none !important; }
+  a { color: inherit; }
+  .voet .meer a::after { content: " (" attr(href) ")"; font-weight: 400; }
+}
+</style>
+</head>
+<body>
+<main>
+<header class="kop"><span class="praktijk">Uitleg-beeldbank</span></header>
+
+<h1>Blaasontsteking en urineweginfectie</h1>
+<p class="inleiding">Een blaasontsteking komt veel voor en is meestal niet ernstig. Soms gaat de infectie dieper: naar de nier of de prostaat. Dan word je zieker en heb je een ander antibioticum nodig.</p>
+<ul class="snel">
+  <li><a href="#infectie">Wat gebeurt er?</a></li>
+  <li><a href="#testen">Hoe testen we?</a></li>
+  <li><a href="#antibiotica">Welk antibioticum?</a></li>
+  <li><a href="#zelf">Zelf doen</a></li>
+  <li><a href="#bellen">Wanneer bellen?</a></li>
+</ul>
+
+<section class="blok" id="infectie" data-stappen>
+  <h2><span class="nr">1</span>Wat gebeurt er bij een infectie?</h2>
+  <div class="knoppen" role="group" aria-label="Stappen">
+    <button type="button" data-stap="1">Gezond</button>
+    <button type="button" data-stap="2">Blaasontsteking</button>
+    <button type="button" data-stap="3">Nierbekken-ontsteking</button>
+    <button type="button" data-stap="4">Prostaat-ontsteking</button>
+  </div>
+  <div class="twee">
+    <figure>
+      <svg viewBox="0 0 600 560" role="img" aria-labelledby="uw-t">
+        <title id="uw-t">De urinewegen: twee nieren met nierbekken, twee urineleiders, de blaas en de plasbuis. Bij een blaasontsteking zitten bacteriën alleen aan de binnenkant van de blaas. Bij een nierbekken-ontsteking of prostaat-ontsteking gaat de infectie het weefsel in.</title>
+        <!-- nieren -->
+        <g data-op="1,2,4">
+          <path d="M150,40 C100,40 80,90 80,135 C80,185 105,225 150,225 C185,225 195,200 185,175 C178,160 178,110 185,95 C195,70 185,40 150,40 Z" fill="#e9a493" stroke="#b5705f" stroke-width="4"/>
+        </g>
+        <g data-op="3">
+          <path d="M150,40 C100,40 80,90 80,135 C80,185 105,225 150,225 C185,225 195,200 185,175 C178,160 178,110 185,95 C195,70 185,40 150,40 Z" fill="#d9443f" stroke="#8e1b1b" stroke-width="4"/>
+        </g>
+        <path d="M450,40 C500,40 520,90 520,135 C520,185 495,225 450,225 C415,225 405,200 415,175 C422,160 422,110 415,95 C405,70 415,40 450,40 Z" fill="#e9a493" stroke="#b5705f" stroke-width="4"/>
+        <path d="M186,108 C162,112 146,124 146,135 C146,148 162,160 186,164 C182,150 182,122 186,108 Z" fill="#fbefb8" stroke="#d39a8a" stroke-width="2.5"/>
+        <path d="M414,108 C438,112 454,124 454,135 C454,148 438,160 414,164 C418,150 418,122 414,108 Z" fill="#fbefb8" stroke="#d39a8a" stroke-width="2.5"/>
+        <!-- urineleiders -->
+        <g fill="none" stroke-linecap="round">
+          <path d="M184,136 C215,150 225,230 240,300 C246,330 252,350 262,368" stroke="#d39a8a" stroke-width="11"/>
+          <path d="M416,136 C385,150 375,230 360,300 C354,330 348,350 338,368" stroke="#d39a8a" stroke-width="11"/>
+          <path d="M184,136 C215,150 225,230 240,300 C246,330 252,350 262,368" stroke="#fbefb8" stroke-width="4"/>
+          <path d="M416,136 C385,150 375,230 360,300 C354,330 348,350 338,368" stroke="#fbefb8" stroke-width="4"/>
+        </g>
+        <!-- prostaat (alleen bij mannen) -->
+        <g data-op="4">
+          <ellipse cx="300" cy="492" rx="40" ry="27" fill="#d9443f" stroke="#8e1b1b" stroke-width="3"/>
+        </g>
+        <!-- blaas en plasbuis -->
+        <ellipse cx="300" cy="405" rx="95" ry="65" fill="#fbefb8" stroke="#d39a8a" stroke-width="14"/>
+        <ellipse cx="300" cy="405" rx="86" ry="56" fill="none" stroke="#e9b3a6" stroke-width="4" data-op="1,3,4"/>
+        <ellipse cx="300" cy="405" rx="86" ry="56" fill="none" stroke="#e0504a" stroke-width="7" data-op="2"/>
+        <rect x="293" y="466" width="14" height="80" rx="4" fill="#fbefb8" stroke="#d39a8a" stroke-width="3"/>
+        <text x="300" y="400" text-anchor="middle" font-size="22" font-weight="700" fill="#8a4035">blaas</text>
+        <!-- bacteriën -->
+        <g fill="#3c8d3c" data-op="2,3,4">
+          <g class="zweef"><rect x="240" y="420" width="16" height="7" rx="3.5" transform="rotate(-20 248 423)"/><rect x="262" y="438" width="16" height="7" rx="3.5"/></g>
+          <g class="zweef b"><rect x="330" y="418" width="16" height="7" rx="3.5" transform="rotate(25 338 421)"/><rect x="350" y="436" width="16" height="7" rx="3.5" transform="rotate(-10 358 439)"/></g>
+          <g class="zweef c"><rect x="300" y="440" width="16" height="7" rx="3.5" transform="rotate(40 308 443)"/><rect x="226" y="390" width="16" height="7" rx="3.5" transform="rotate(70 234 393)"/></g>
+          <g class="zweef d"><rect x="364" y="388" width="16" height="7" rx="3.5" transform="rotate(-60 372 391)"/></g>
+        </g>
+        <g fill="#3c8d3c" data-op="3">
+          <rect x="238" y="292" width="16" height="7" rx="3.5" transform="rotate(75 246 295)"/>
+          <rect x="224" y="226" width="16" height="7" rx="3.5" transform="rotate(78 232 229)"/>
+          <rect x="206" y="166" width="16" height="7" rx="3.5" transform="rotate(55 214 169)"/>
+          <g class="zweef"><rect x="152" y="126" width="16" height="7" rx="3.5" transform="rotate(-20 160 129)"/><rect x="118" y="90" width="16" height="7" rx="3.5" transform="rotate(30 126 93)"/></g>
+          <g class="zweef b"><rect x="110" y="170" width="16" height="7" rx="3.5" transform="rotate(-40 118 173)"/><rect x="140" y="62" width="16" height="7" rx="3.5"/></g>
+          <path d="M252,330 L244,280 M236,290 L244,276 L254,288" stroke="#8e1b1b" stroke-width="4" fill="none" stroke-linecap="round"/>
+        </g>
+        <g fill="#3c8d3c" data-op="4">
+          <g class="zweef"><rect x="268" y="486" width="14" height="6" rx="3" transform="rotate(30 275 489)"/><rect x="314" y="482" width="14" height="6" rx="3" transform="rotate(-30 321 485)"/></g>
+          <g class="zweef b"><rect x="276" y="502" width="14" height="6" rx="3"/><rect x="312" y="500" width="14" height="6" rx="3" transform="rotate(50 319 503)"/></g>
+        </g>
+        <!-- thermometer bij infectie in het weefsel -->
+        <g data-op="3,4">
+          <rect x="554" y="46" width="16" height="66" rx="8" fill="#fff" stroke="#8e1b1b" stroke-width="3"/>
+          <rect x="559" y="70" width="6" height="46" fill="#d9443f"/>
+          <circle cx="562" cy="122" r="13" fill="#d9443f" stroke="#8e1b1b" stroke-width="3"/>
+          <text x="562" y="164" text-anchor="middle" font-size="16" font-weight="700" fill="#8e1b1b">koorts,</text>
+          <text x="562" y="183" text-anchor="middle" font-size="16" font-weight="700" fill="#8e1b1b">ziek</text>
+        </g>
+        <!-- labels -->
+        <text x="150" y="252" text-anchor="middle" font-size="18" font-weight="700" fill="#8a4035">nier</text>
+        <text x="450" y="252" text-anchor="middle" font-size="18" font-weight="700" fill="#8a4035">nier</text>
+        <path d="M410,140 L300,120" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="300" y="112" text-anchor="middle" font-size="16" fill="#24201f">nierbekken</text>
+        <path d="M362,290 L440,300" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="446" y="306" font-size="16" fill="#24201f">urineleider</text>
+        <path d="M292,530 L230,540" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="222" y="546" text-anchor="end" font-size="16" fill="#24201f">plasbuis</text>
+        <g data-op="2">
+          <path d="M392,420 L452,452" stroke="#8f8f8f" stroke-width="2"/>
+          <text x="456" y="450" font-size="16" font-weight="700" fill="#e0504a">ontstoken</text>
+          <text x="456" y="470" font-size="16" font-weight="700" fill="#e0504a">binnenkant</text>
+        </g>
+        <g data-op="3">
+          <text x="300" y="50" text-anchor="middle" font-size="17" font-weight="700" fill="#8e1b1b">nierbekken en</text>
+          <text x="300" y="70" text-anchor="middle" font-size="17" font-weight="700" fill="#8e1b1b">nier ontstoken</text>
+          <path d="M236,62 L196,80" stroke="#8f8f8f" stroke-width="2"/>
+        </g>
+        <g data-op="4">
+          <path d="M342,496 L410,512" stroke="#8f8f8f" stroke-width="2"/>
+          <text x="414" y="512" font-size="16" font-weight="700" fill="#8e1b1b">prostaat</text>
+          <text x="414" y="531" font-size="14" fill="#5d5753">(alleen bij mannen)</text>
+        </g>
+      </svg>
+      <ul class="legenda">
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="7" width="14" height="6" rx="3" fill="#3c8d3c"/></svg>bacterie</li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="#fbefb8" stroke="#d39a8a" stroke-width="2"/></svg>plas</li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="#d9443f"/></svg>ontsteking in het weefsel</li>
+      </ul>
+    </figure>
+    <div class="stap-teksten">
+      <div data-op="1"><h3>Gezonde urinewegen</h3>
+        <p class="groot">Je <strong>nieren</strong> maken plas. Die gaat via het <strong>nierbekken</strong> en de <strong>urineleiders</strong> naar de <strong>blaas</strong>.</p>
+        <p class="groot">Via de <strong>plasbuis</strong> plas je het uit.</p></div>
+      <div data-op="2"><h3>Blaasontsteking</h3>
+        <p class="groot">Bacteriën komen via de plasbuis in de blaas. Vaak zijn het bacteriën uit de darm. Alleen de <strong>binnenkant van de blaas</strong> raakt ontstoken.</p>
+        <p class="groot">Plassen doet pijn of brandt. Je moet vaak, maar er komt maar een klein beetje. Soms zit er bloed in je plas.</p>
+        <p>Je hebt <strong>geen koorts</strong>.</p></div>
+      <div data-op="3"><h3>Nierbekken-ontsteking</h3>
+        <p class="groot">De bacteriën gaan omhoog naar de nier. Nu gaat de infectie <strong>het weefsel in</strong>: de nier zelf.</p>
+        <p class="groot">Je wordt opeens ziek: <strong>koorts</strong>, koude rillingen en <strong>pijn in je rug of zij</strong>.</p>
+        <p>In het begin is er soms geen koorts. Ouderen krijgen niet altijd koorts. Je hebt altijd antibiotica nodig. Bel dezelfde dag.</p></div>
+      <div data-op="4"><h3>Prostaat-ontsteking</h3>
+        <p class="groot">Bij mannen kan de infectie ook <strong>de prostaat</strong> ingaan. Ook dat is een infectie in het weefsel.</p>
+        <p class="groot">Je wordt opeens ziek: <strong>koorts</strong>, en <strong>pijn tussen je anus en je balzak</strong>.</p>
+        <p>In het begin is er soms geen koorts. Ouderen krijgen niet altijd koorts. Je hebt altijd antibiotica nodig. Bel dezelfde dag.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blok" id="testen">
+  <h2><span class="nr">2</span>Hoe testen we je plas?</h2>
+  <div class="kaarten">
+    <div class="kaart blauw">
+      <h3>1. Teststrookje</h3>
+      <p class="wanneer">Meestal binnen 1 dag</p>
+      <p>Op de praktijk gaat een strookje in je plas. Dat kijkt naar een stof die bacteriën maken (nitriet) en naar witte bloedcellen.</p>
+    </div>
+    <div class="kaart">
+      <h3>2. Soms extra onderzoek</h3>
+      <p class="wanneer">Als het strookje niet duidelijk is</p>
+      <p>Dan doen we soms een extra test op de praktijk.</p>
+    </div>
+    <div class="kaart groen">
+      <h3>3. Kweek in het lab</h3>
+      <p class="wanneer">Uitslag na ongeveer 1 week</p>
+      <p>Het lab zoekt uit <strong>welke bacterie</strong> het is en <strong>welk antibioticum</strong> werkt. Dat doen we bijvoorbeeld bij mannen, als je zwanger bent, bij koorts, en als de antibiotica niet goed helpen.</p>
+    </div>
+  </div>
+  <div class="twee gelijk">
+    <div>
+      <h3>Je plas inleveren</h3>
+      <ul class="punten">
+        <li>Plas in een schoon potje met deksel. Het liefst als je 4 uur niet hebt geplast, bijvoorbeeld 's ochtends.</li>
+        <li>Breng het binnen 2 uur. Lukt dat niet? Zet het in de koelkast en breng het binnen 24 uur.</li>
+      </ul>
+    </div>
+    <div class="let-op">
+      <h3>Geen klachten? Dan geen test</h3>
+      <p>Ruikt je plas alleen anders of is hij troebel? Dan heeft testen geen zin. Er zitten vaak bacteriën in de plas zonder dat je ziek bent, vooral bij ouderen. Onnodig antibiotica slikken is niet goed: bacteriën kunnen er ongevoelig voor worden.</p>
+    </div>
+  </div>
+</section>
+
+<section class="blok" id="antibiotica" data-stappen>
+  <h2><span class="nr">3</span>Welk antibioticum? Het hangt af van waar de infectie zit</h2>
+  <div class="knoppen" role="group" aria-label="Stappen">
+    <button type="button" data-stap="1">Middel voor de blaas</button>
+    <button type="button" data-stap="2">Middel voor het weefsel</button>
+  </div>
+  <div class="twee">
+    <figure>
+      <svg viewBox="0 0 600 470" role="img" aria-labelledby="ab-t">
+        <title id="ab-t">Waar komt het antibioticum terecht? Nitrofurantoïne en fosfomycine komen vooral in de plas in de blaas, en te weinig in de nier en de prostaat. Middelen zoals ciprofloxacine, amoxicilline met clavulaanzuur en cotrimoxazol komen ook in het weefsel van nier en prostaat.</title>
+        <!-- nieren -->
+        <path d="M150,30 C100,30 80,80 80,125 C80,175 105,215 150,215 C185,215 195,190 185,165 C178,150 178,100 185,85 C195,60 185,30 150,30 Z" fill="#e9a493" stroke="#b5705f" stroke-width="4"/>
+        <path d="M450,30 C500,30 520,80 520,125 C520,175 495,215 450,215 C415,215 405,190 415,165 C422,150 422,100 415,85 C405,60 415,30 450,30 Z" fill="#e9a493" stroke="#b5705f" stroke-width="4"/>
+        <g fill="none" stroke-linecap="round">
+          <path d="M184,126 C215,140 225,210 236,260 C240,280 246,296 256,310" stroke="#d39a8a" stroke-width="11"/>
+          <path d="M416,126 C385,140 375,210 364,260 C360,280 354,296 344,310" stroke="#d39a8a" stroke-width="11"/>
+        </g>
+        <!-- prostaat en blaas -->
+        <ellipse cx="300" cy="422" rx="40" ry="26" fill="#f2c4b0" stroke="#c9675b" stroke-width="3"/>
+        <ellipse cx="300" cy="346" rx="92" ry="58" fill="#fbefb8" stroke="#d39a8a" stroke-width="14"/>
+        <rect x="293" y="400" width="14" height="64" rx="4" fill="#fbefb8" stroke="#d39a8a" stroke-width="3"/>
+        <!-- stap 1: middel alleen in de plas in de blaas -->
+        <g fill="#2a6f97" data-op="1">
+          <circle cx="250" cy="330" r="6"/><circle cx="276" cy="356" r="6"/><circle cx="300" cy="322" r="6"/><circle cx="326" cy="358" r="6"/>
+          <circle cx="352" cy="330" r="6"/><circle cx="262" cy="374" r="6"/><circle cx="340" cy="378" r="6"/><circle cx="300" cy="380" r="6"/>
+          <circle cx="226" cy="352" r="6"/><circle cx="374" cy="352" r="6"/><circle cx="288" cy="346" r="6"/><circle cx="316" cy="338" r="6"/>
+        </g>
+        <!-- stap 2: middel ook in het weefsel -->
+        <g fill="#6b4ba1" data-op="2">
+          <circle cx="250" cy="330" r="6"/><circle cx="300" cy="322" r="6"/><circle cx="352" cy="330" r="6"/><circle cx="276" cy="364" r="6"/><circle cx="326" cy="364" r="6"/>
+          <circle cx="120" cy="80" r="6"/><circle cx="110" cy="130" r="6"/><circle cx="140" cy="175" r="6"/><circle cx="150" cy="60" r="6"/><circle cx="130" cy="110" r="6"/><circle cx="160" cy="190" r="6"/><circle cx="100" cy="160" r="6"/>
+          <circle cx="480" cy="80" r="6"/><circle cx="490" cy="130" r="6"/><circle cx="460" cy="175" r="6"/><circle cx="450" cy="60" r="6"/><circle cx="470" cy="110" r="6"/><circle cx="440" cy="190" r="6"/><circle cx="500" cy="160" r="6"/>
+          <circle cx="276" cy="418" r="5"/><circle cx="324" cy="418" r="5"/><circle cx="286" cy="432" r="5"/><circle cx="314" cy="432" r="5"/>
+        </g>
+        <!-- vinkjes en kruisjes -->
+        <g data-op="1">
+          <circle cx="410" cy="300" r="17" fill="#2f7d5b"/><path d="M401,300 L408,307 L420,293" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="40" cy="120" r="17" fill="#a8302c"/><path d="M33,113 L47,127 M47,113 L33,127" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="560" cy="120" r="17" fill="#a8302c"/><path d="M553,113 L567,127 M567,113 L553,127" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="362" cy="430" r="15" fill="#a8302c"/><path d="M356,424 L368,436 M368,424 L356,436" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+          <text x="300" y="60" text-anchor="middle" font-size="17" font-weight="700" fill="#2a6f97">komt vooral in de plas</text>
+          <text x="300" y="82" text-anchor="middle" font-size="17" font-weight="700" fill="#2a6f97">in de blaas</text>
+        </g>
+        <g data-op="2">
+          <circle cx="410" cy="300" r="17" fill="#2f7d5b"/><path d="M401,300 L408,307 L420,293" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="40" cy="120" r="17" fill="#2f7d5b"/><path d="M31,120 L38,127 L50,113" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="560" cy="120" r="17" fill="#2f7d5b"/><path d="M551,120 L558,127 L570,113" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="362" cy="430" r="15" fill="#2f7d5b"/><path d="M354,430 L360,436 L370,424" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="300" y="60" text-anchor="middle" font-size="17" font-weight="700" fill="#6b4ba1">komt ook in het weefsel</text>
+          <text x="300" y="82" text-anchor="middle" font-size="17" font-weight="700" fill="#6b4ba1">van nier en prostaat</text>
+        </g>
+        <text x="150" y="240" text-anchor="middle" font-size="16" font-weight="700" fill="#8a4035">nier</text>
+        <text x="450" y="240" text-anchor="middle" font-size="16" font-weight="700" fill="#8a4035">nier</text>
+        <text x="196" y="352" text-anchor="end" font-size="18" font-weight="700" fill="#8a4035">blaas</text>
+        <text x="384" y="458" font-size="15" fill="#5d5753">prostaat (bij mannen)</text>
+      </svg>
+    </figure>
+    <div class="stap-teksten">
+      <div data-op="1"><h3>Nitrofurantoïne en fosfomycine</h3>
+        <p class="groot">Deze middelen komen vooral <strong>in je plas in de blaas</strong>. Daar werken ze goed tegen een gewone blaasontsteking.</p>
+        <p class="groot">In het weefsel van de <strong>nier</strong> of de <strong>prostaat</strong> komt <strong>te weinig</strong>. Bij een nierbekken- of prostaat-ontsteking helpen ze dus niet goed.</p></div>
+      <div data-op="2"><h3>Bij een infectie in het weefsel</h3>
+        <p class="groot">Dan krijg je een middel dat <strong>ook in het weefsel</strong> komt. Bijvoorbeeld <strong>ciprofloxacine</strong>, <strong>amoxicilline met clavulaanzuur</strong> of <strong>cotrimoxazol</strong>.</p>
+        <p class="groot">Je krijgt eerst een middel dat tegen de meeste bacteriën helpt. Na de kweek krijg je soms een ander middel.</p></div>
+    </div>
+  </div>
+  <div class="kaarten">
+    <div class="kaart">
+      <h3>Afwachten mag soms</h3>
+      <p>Ben je een gezonde vrouw en niet zwanger? Dan gaat de helft van de blaasontstekingen binnen 1 week vanzelf over. Je kiest samen: afwachten, antibiotica, of een recept voor als het niet overgaat.</p>
+    </div>
+    <div class="kaart oranje">
+      <h3>Altijd antibiotica</h3>
+      <p>Bij mannen, bij zwangeren, bij diabetes of een minder goede afweer, bij een ziekte van de nieren of blaas, en bij elke infectie in het weefsel.</p>
+    </div>
+    <div class="kaart blauw">
+      <h3>Maak de kuur af</h3>
+      <p>Slik de antibiotica op vaste tijden en tot ze op zijn, ook als je je al beter voelt. Anders kan de infectie terugkomen.</p>
+    </div>
+  </div>
+  <p class="klein">Ben je zwanger of gaat het om een kind? Dan kiest de huisarts soms een ander middel.</p>
+</section>
+
+<section class="blok" id="zelf">
+  <h2><span class="nr">4</span>Wat kun je zelf doen?</h2>
+  <div class="twee gelijk">
+    <ul class="punten groot">
+      <li><strong>Drink veel</strong>, tot 3 liter per dag: water, thee of melk. Heb je hartfalen? Vraag je arts hoeveel je mag drinken.</li>
+      <li>Last van pijn? Een paar dagen <strong>paracetamol</strong> kan helpen.</li>
+      <li>Ga <strong>meteen plassen</strong> als je moet.</li>
+    </ul>
+    <ul class="punten groot">
+      <li>Plas je blaas <strong>helemaal leeg</strong>: zit rechtop, voeten plat op de grond, neem de tijd en pers niet.</li>
+      <li>Ga <strong>na seks plassen</strong>.</li>
+      <li>Gebruik geen glijmiddel dat zaadcellen doodt.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="blok" id="bellen">
+  <h2><span class="nr">5</span>Wanneer bellen?</h2>
+  <div class="bel">
+    <div class="kaart spoed">
+      <h3><span class="label">Spoed</span> Bel meteen</h3>
+      <p>Je huisarts of de huisartsenpost, als je erg ziek bent en:</p>
+      <ul class="punten">
+        <li>je ademt snel of je hart klopt snel</li>
+        <li>je bent in de war of reageert niet goed (dan belt iemand anders)</li>
+      </ul>
+    </div>
+    <div class="kaart spoed">
+      <h3><span class="label">Vandaag</span> Bel dezelfde dag</h3>
+      <p>Je huisarts of de huisartsenpost, bij:</p>
+      <ul class="punten">
+        <li>koorts (38 graden of hoger) of koude rillingen</li>
+        <li>pijn in je zij of rug, of pijn tussen anus en balzak</li>
+        <li>je voelt je ziek</li>
+      </ul>
+    </div>
+    <div class="kaart spoed">
+      <h3><span class="label">Vandaag</span> Klachten van een blaasontsteking en …</h3>
+      <ul class="punten">
+        <li>je bent zwanger</li>
+        <li>je bent een man</li>
+        <li>het gaat om een kind jonger dan 12 jaar</li>
+        <li>je had al eens een nierbekken-ontsteking</li>
+        <li>je afweer is minder goed, bijvoorbeeld door diabetes of medicijnen</li>
+        <li>je hebt een ziekte van je nieren of blaas</li>
+      </ul>
+      <p>Bel dan <strong>dezelfde dag</strong>.</p>
+    </div>
+    <div class="kaart">
+      <h3>Met antibiotica en nog klachten</h3>
+      <ul class="punten">
+        <li>Nierbekken- of prostaat-ontsteking: na 2 dagen niet beter of nog koorts, je wordt zieker of weer ziek, of je spuugt de pillen uit. Bel <strong>dezelfde dag</strong>.</li>
+        <li>Blaasontsteking: 2 dagen na de laatste pil nog klachten. Bel op een werkdag en neem een potje verse plas mee.</li>
+      </ul>
+    </div>
+    <div class="kaart">
+      <h3>Bel op een werkdag</h3>
+      <ul class="punten">
+        <li>Je hebt veel last en wilt niet afwachten.</li>
+        <li>Je hebt afgewacht en na 1 week is het niet minder.</li>
+        <li>Je hebt 3 keer per jaar of vaker een blaasontsteking.</li>
+        <li>Je denkt dat het misschien een soa is.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<footer class="voet">
+<p class="meer">Meer lezen: <a href="https://www.thuisarts.nl/blaasontsteking" target="_blank" rel="noopener noreferrer">thuisarts.nl/blaasontsteking</a> · <a href="https://www.thuisarts.nl/nierbekken-ontsteking" target="_blank" rel="noopener noreferrer">thuisarts.nl/nierbekken-ontsteking</a> · <a href="https://www.thuisarts.nl/prostaat-ontsteking" target="_blank" rel="noopener noreferrer">thuisarts.nl/prostaat-ontsteking</a></p>
+<p>Deze uitleg is algemeen. Wat voor jou geldt, bespreek je met je huisarts.</p>
+<p class="klein">Tekst en tekeningen: Huisartsenpraktijk Tolgaarde / Socev, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.nl">CC BY-SA 4.0</a>.</p>
+</footer>
+</main>
+<script>
+// Stap-voor-stap-knoppen. Elk blok met data-stappen heeft knoppen (data-stap="n")
+// en onderdelen met data-op="1,3": die zijn alleen zichtbaar bij die stappen.
+(function () {
+  document.querySelectorAll("[data-stappen]").forEach(function (doos) {
+    var knoppen = doos.querySelectorAll("button[data-stap]");
+    function zet(n) {
+      doos.querySelectorAll("[data-op]").forEach(function (el) {
+        var aan = el.getAttribute("data-op").split(",").indexOf(String(n)) !== -1;
+        el.classList.toggle("uit", !aan);
+        el.setAttribute("aria-hidden", aan ? "false" : "true");
+      });
+      knoppen.forEach(function (k) {
+        k.setAttribute("aria-pressed", k.getAttribute("data-stap") === String(n) ? "true" : "false");
+      });
+    }
+    knoppen.forEach(function (k) {
+      k.addEventListener("click", function () { zet(Number(k.getAttribute("data-stap"))); });
+    });
+    zet(Number(doos.getAttribute("data-start") || 1));
+  });
+})();
+</script>
+</body>
+</html>
+

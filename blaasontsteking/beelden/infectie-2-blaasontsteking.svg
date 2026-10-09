@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 560" role="img" aria-labelledby="uw-t" width="600" height="560">
+        <title id="uw-t">De urinewegen: twee nieren met nierbekken, twee urineleiders, de blaas en de plasbuis. Bij een blaasontsteking zitten bacteriën alleen aan de binnenkant van de blaas. Bij een nierbekken-ontsteking of prostaat-ontsteking gaat de infectie het weefsel in.</title>
+        <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+/* tekeningen: kleuren en bewegingen */
+.zweef { animation: zweef 3.2s ease-in-out infinite alternate; transform-box: fill-box; }
+.zweef.b { animation-delay: -1.1s; } .zweef.c { animation-delay: -2.1s; } .zweef.d { animation-duration: 2.6s; }
+@keyframes zweef { from { transform: translate(-3px, -4px); } to { transform: translate(4px, 4px); } }
+.stroom { stroke-dasharray: 10 14; animation: stroom 1.4s linear infinite; }
+.stroom.traag { animation-duration: 3.2s; }
+@keyframes stroom { to { stroke-dashoffset: -48; } }
+.klop { transform-box: fill-box; transform-origin: center; animation: klop 1s ease-in-out infinite; }
+.klop.zwak { animation: klopzwak 1.25s ease-in-out infinite; }
+@keyframes klop { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.13); } }
+@keyframes klopzwak { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.04); } }
+.golf { transform-box: fill-box; transform-origin: center; animation: golf 1.6s ease-out infinite; }
+@keyframes golf { 0% { transform: scale(.1); opacity: .9; } 70% { opacity: .35; } 100% { transform: scale(1); opacity: 0; } }
+.seintje { stroke-dasharray: 26 400; animation: seintje 1.6s linear infinite; }
+@keyframes seintje { 0%, 30% { stroke-dashoffset: 26; } 75%, 100% { stroke-dashoffset: -260; } }
+.flikker { animation: flikker .9s steps(2, jump-none) infinite; }
+.flikker.b { animation-duration: .7s; animation-delay: -.3s; } .flikker.c { animation-duration: 1.1s; animation-delay: -.5s; }
+@keyframes flikker { 0% { opacity: 1; } 100% { opacity: .15; } }
+.kamerslag { animation: kamerslag 4.6s linear infinite; }
+@keyframes kamerslag { 0%, 4%, 17%, 21%, 30%, 34%, 58%, 62%, 70%, 74%, 92%, 96%, 100% { opacity: 0; }
+  2%, 19%, 32%, 60%, 72%, 94% { opacity: .55; } }
+.kamerslag-r { animation: kamerslagr 1.6s linear infinite; }
+@keyframes kamerslagr { 0%, 45%, 62%, 100% { opacity: 0; } 52% { opacity: .55; } }
+@media (prefers-reduced-motion: reduce) {
+  .zweef, .stroom, .klop, .golf, .seintje, .flikker, .kamerslag, .kamerslag-r { animation: none !important; }
+  .golf { transform: scale(.4); opacity: .5; } .seintje { stroke-dasharray: none; opacity: .7; }
+  .kamerslag, .kamerslag-r { opacity: .3; } .flikker { opacity: .8; }
+}
+</style><!-- nieren -->
+        <g>
+          <path d="M150,40 C100,40 80,90 80,135 C80,185 105,225 150,225 C185,225 195,200 185,175 C178,160 178,110 185,95 C195,70 185,40 150,40 Z" fill="#e9a493" stroke="#b5705f" stroke-width="4"/>
+        </g>
+        <path d="M450,40 C500,40 520,90 520,135 C520,185 495,225 450,225 C415,225 405,200 415,175 C422,160 422,110 415,95 C405,70 415,40 450,40 Z" fill="#e9a493" stroke="#b5705f" stroke-width="4"/>
+        <path d="M186,108 C162,112 146,124 146,135 C146,148 162,160 186,164 C182,150 182,122 186,108 Z" fill="#fbefb8" stroke="#d39a8a" stroke-width="2.5"/>
+        <path d="M414,108 C438,112 454,124 454,135 C454,148 438,160 414,164 C418,150 418,122 414,108 Z" fill="#fbefb8" stroke="#d39a8a" stroke-width="2.5"/>
+        <!-- urineleiders -->
+        <g fill="none" stroke-linecap="round">
+          <path d="M184,136 C215,150 225,230 240,300 C246,330 252,350 262,368" stroke="#d39a8a" stroke-width="11"/>
+          <path d="M416,136 C385,150 375,230 360,300 C354,330 348,350 338,368" stroke="#d39a8a" stroke-width="11"/>
+          <path d="M184,136 C215,150 225,230 240,300 C246,330 252,350 262,368" stroke="#fbefb8" stroke-width="4"/>
+          <path d="M416,136 C385,150 375,230 360,300 C354,330 348,350 338,368" stroke="#fbefb8" stroke-width="4"/>
+        </g>
+        <!-- prostaat (alleen bij mannen) -->
+        <!-- blaas en plasbuis -->
+        <ellipse cx="300" cy="405" rx="95" ry="65" fill="#fbefb8" stroke="#d39a8a" stroke-width="14"/>
+        <ellipse cx="300" cy="405" rx="86" ry="56" fill="none" stroke="#e0504a" stroke-width="7"/>
+        <rect x="293" y="466" width="14" height="80" rx="4" fill="#fbefb8" stroke="#d39a8a" stroke-width="3"/>
+        <text x="300" y="400" text-anchor="middle" font-size="22" font-weight="700" fill="#8a4035">blaas</text>
+        <!-- bacteriën -->
+        <g fill="#3c8d3c">
+          <g class="zweef"><rect x="240" y="420" width="16" height="7" rx="3.5" transform="rotate(-20 248 423)"/><rect x="262" y="438" width="16" height="7" rx="3.5"/></g>
+          <g class="zweef b"><rect x="330" y="418" width="16" height="7" rx="3.5" transform="rotate(25 338 421)"/><rect x="350" y="436" width="16" height="7" rx="3.5" transform="rotate(-10 358 439)"/></g>
+          <g class="zweef c"><rect x="300" y="440" width="16" height="7" rx="3.5" transform="rotate(40 308 443)"/><rect x="226" y="390" width="16" height="7" rx="3.5" transform="rotate(70 234 393)"/></g>
+          <g class="zweef d"><rect x="364" y="388" width="16" height="7" rx="3.5" transform="rotate(-60 372 391)"/></g>
+        </g>
+        <!-- thermometer bij infectie in het weefsel -->
+        <!-- labels -->
+        <text x="150" y="252" text-anchor="middle" font-size="18" font-weight="700" fill="#8a4035">nier</text>
+        <text x="450" y="252" text-anchor="middle" font-size="18" font-weight="700" fill="#8a4035">nier</text>
+        <path d="M410,140 L300,120" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="300" y="112" text-anchor="middle" font-size="16" fill="#24201f">nierbekken</text>
+        <path d="M362,290 L440,300" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="446" y="306" font-size="16" fill="#24201f">urineleider</text>
+        <path d="M292,530 L230,540" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="222" y="546" text-anchor="end" font-size="16" fill="#24201f">plasbuis</text>
+        <g>
+          <path d="M392,420 L452,452" stroke="#8f8f8f" stroke-width="2"/>
+          <text x="456" y="450" font-size="16" font-weight="700" fill="#e0504a">ontstoken</text>
+          <text x="456" y="470" font-size="16" font-weight="700" fill="#e0504a">binnenkant</text>
+        </g>
+        </svg>

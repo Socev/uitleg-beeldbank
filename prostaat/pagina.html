@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prostaat · Uitleg</title>
+<style>
+/* uitleg.tolgaarde.nl — uitlegpagina's voor tijdens het consult. Geen externe bestanden. */
+:root {
+  --bg: #faf8f6; --kaart: #fff; --tekst: #24201f; --zacht: #5d5753; --rand: #e9e2dc;
+  --rood: #e31e26; --grijs: #8f8f8f; --blauw: #2a6f97; --blauwzacht: #e3f0f8;
+  --groen: #2f7d5b; --groenzacht: #e4f2ea; --oranje: #b85c00; --oranjezacht: #fdf0e1;
+}
+* { box-sizing: border-box; }
+html { font-size: clamp(18px, 0.9vw + 10px, 24px); }
+body { margin: 0; background: var(--bg); color: var(--tekst); line-height: 1.5;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+main { max-width: 1240px; margin: 0 auto; padding: 1.2rem 1.4rem 2rem; }
+a { color: var(--blauw); }
+
+/* kop */
+.kop { display: flex; align-items: center; gap: 1rem; padding-bottom: .9rem;
+  border-bottom: 3px solid var(--rood); margin-bottom: 1.4rem; }
+.kop img { width: 2.6rem; height: auto; }
+.kop .terug { margin-left: auto; font-weight: 600; text-decoration: none; padding: .45rem .9rem;
+  border: 2px solid var(--rand); border-radius: 999px; background: var(--kaart); color: var(--tekst); }
+.kop .terug:hover, .kop .terug:focus-visible { border-color: var(--blauw); outline: none; }
+.kop .praktijk { color: var(--zacht); font-size: .85rem; line-height: 1.25; }
+h1 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; margin: 0 0 .3rem; letter-spacing: -0.01em; }
+.inleiding { font-size: 1.15rem; color: var(--zacht); margin: 0 0 1.2rem; max-width: 46em; }
+
+/* snelmenu binnen een pagina */
+.snel { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.4rem; padding: 0; list-style: none; }
+.snel a { display: inline-block; padding: .4rem .85rem; border-radius: 999px; background: var(--kaart);
+  border: 2px solid var(--rand); text-decoration: none; color: var(--tekst); font-weight: 600; font-size: .9rem; }
+.snel a:hover, .snel a:focus-visible { border-color: var(--blauw); outline: none; }
+
+/* blokken */
+.blok { background: var(--kaart); border: 1px solid var(--rand); border-radius: 18px;
+  padding: 1.3rem 1.5rem 1.4rem; margin: 0 0 1.4rem; scroll-margin-top: 1rem; }
+.blok > h2, .twee h2 { font-size: 1.45rem; margin: 0 0 .8rem; line-height: 1.2; display: flex; align-items: center; gap: .6rem; }
+.nr { flex: none; display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%;
+  background: var(--rood); color: #fff; font-size: 1.05rem; font-weight: 700; }
+.twee { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 1.6rem; align-items: center; }
+.twee.gelijk { grid-template-columns: 1fr 1fr; align-items: start; }
+.twee.breed { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); }
+figure { margin: 0; }
+figure svg { display: block; width: 100%; height: auto; max-height: 64vh; }
+figcaption, .klein { color: var(--zacht); font-size: .85rem; }
+p { margin: 0 0 .7rem; }
+.groot { font-size: 1.2rem; }
+ul.punten { margin: 0 0 .6rem; padding-left: 1.2rem; }
+ul.punten li { margin: 0 0 .35rem; }
+ul.punten li::marker { color: var(--rood); }
+
+/* stap-voor-stap */
+.knoppen { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1rem; }
+.knoppen button { font: inherit; font-size: .95rem; font-weight: 600; cursor: pointer; color: var(--tekst);
+  padding: .55rem 1rem; min-height: 2.6rem; border-radius: 999px; border: 2px solid var(--rand); background: var(--bg); }
+.knoppen button[aria-pressed="true"] { background: var(--blauw); border-color: var(--blauw); color: #fff; }
+.knoppen button:focus-visible { outline: 3px solid #f2b233; outline-offset: 2px; }
+.stap-teksten { display: grid; }
+.stap-teksten > * { grid-area: 1 / 1; }
+.stap-teksten h3 { font-size: 1.3rem; margin: 0 0 .5rem; }
+.uit { opacity: 0; visibility: hidden; }
+[data-op] { transition: opacity .45s ease, visibility .45s; }
+
+/* kaarten en meldingen */
+.kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr)); gap: 1rem; }
+.kaart { border: 2px solid var(--rand); border-radius: 14px; padding: 1rem 1.1rem; background: var(--kaart); }
+.kaart h3 { margin: 0 0 .4rem; font-size: 1.15rem; }
+.kaart.blauw { background: var(--blauwzacht); border-color: #c4dcec; }
+.kaart.groen { background: var(--groenzacht); border-color: #c6e2d2; }
+.kaart.oranje { background: var(--oranjezacht); border-color: #f2d6b3; }
+.kaart .wanneer { font-weight: 700; color: var(--blauw); }
+.let-op { border-left: 6px solid var(--rood); background: #fdf0f0; border-radius: 10px; padding: .9rem 1.1rem; }
+.let-op h3 { margin: 0 0 .4rem; font-size: 1.15rem; }
+.bel { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; }
+.bel .kaart h3 { display: flex; gap: .5rem; align-items: center; }
+.bel .spoed { border-color: var(--rood); background: #fdf0f0; }
+.label { display: inline-block; padding: .1rem .55rem; border-radius: 6px; font-size: .8rem; font-weight: 700;
+  color: #fff; background: var(--rood); }
+.label.grijs { background: var(--zacht); }
+
+/* legenda */
+.legenda { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; list-style: none; padding: 0; margin: .6rem 0 0; font-size: .9rem; }
+.legenda li { display: flex; align-items: center; gap: .4rem; }
+.legenda svg { width: 1.3rem; height: 1.3rem; flex: none; }
+
+/* pictogrammen (prikkels) */
+.prikkels { display: grid; grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr)); gap: .8rem; list-style: none; padding: 0; margin: 0; }
+.prikkels li { display: flex; flex-direction: column; align-items: center; text-align: center; gap: .35rem;
+  padding: .8rem .5rem; border: 2px solid var(--rand); border-radius: 14px; background: var(--bg); font-weight: 600; font-size: .95rem; line-height: 1.25; }
+.prikkels svg { width: 3rem; height: 3rem; color: var(--blauw); }
+.icoon { fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+
+/* startpagina */
+.tegels { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); }
+.tegels a { display: flex; gap: 1rem; align-items: center; height: 100%; padding: 1.2rem 1.3rem;
+  background: var(--kaart); border: 2px solid var(--rand); border-radius: 18px; color: inherit; text-decoration: none;
+  transition: border-color .15s, box-shadow .15s, transform .15s; }
+.tegels a:hover, .tegels a:focus-visible { border-color: var(--blauw); box-shadow: 0 6px 18px rgba(42,111,151,.14); transform: translateY(-2px); outline: none; }
+.tegels svg { width: 4.4rem; height: 4.4rem; flex: none; }
+.tegels .naam { display: block; font-size: 1.3rem; font-weight: 700; line-height: 1.2; }
+.tegels .wat { display: block; color: var(--zacht); font-size: .95rem; margin-top: .2rem; }
+
+/* voet */
+.voet { margin-top: 1.6rem; padding-top: 1rem; border-top: 1px solid var(--rand); color: var(--zacht); font-size: .9rem; }
+.voet .meer { font-size: 1.05rem; color: var(--tekst); font-weight: 600; }
+.concept { display: inline-block; margin-top: .4rem; padding: .15rem .6rem; border-radius: 6px;
+  background: #fff4cc; color: #6b5200; font-size: .8rem; font-weight: 600; }
+
+/* tekeningen: kleuren en bewegingen */
+.zweef { animation: zweef 3.2s ease-in-out infinite alternate; transform-box: fill-box; }
+.zweef.b { animation-delay: -1.1s; } .zweef.c { animation-delay: -2.1s; } .zweef.d { animation-duration: 2.6s; }
+@keyframes zweef { from { transform: translate(-3px, -4px); } to { transform: translate(4px, 4px); } }
+.stroom { stroke-dasharray: 10 14; animation: stroom 1.4s linear infinite; }
+.stroom.traag { animation-duration: 3.2s; }
+@keyframes stroom { to { stroke-dashoffset: -48; } }
+.klop { transform-box: fill-box; transform-origin: center; animation: klop 1s ease-in-out infinite; }
+.klop.zwak { animation: klopzwak 1.25s ease-in-out infinite; }
+@keyframes klop { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.13); } }
+@keyframes klopzwak { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.04); } }
+.golf { transform-box: fill-box; transform-origin: center; animation: golf 1.6s ease-out infinite; }
+@keyframes golf { 0% { transform: scale(.1); opacity: .9; } 70% { opacity: .35; } 100% { transform: scale(1); opacity: 0; } }
+.seintje { stroke-dasharray: 26 400; animation: seintje 1.6s linear infinite; }
+@keyframes seintje { 0%, 30% { stroke-dashoffset: 26; } 75%, 100% { stroke-dashoffset: -260; } }
+.flikker { animation: flikker .9s steps(2, jump-none) infinite; }
+.flikker.b { animation-duration: .7s; animation-delay: -.3s; } .flikker.c { animation-duration: 1.1s; animation-delay: -.5s; }
+@keyframes flikker { 0% { opacity: 1; } 100% { opacity: .15; } }
+.kamerslag { animation: kamerslag 4.6s linear infinite; }
+@keyframes kamerslag { 0%, 4%, 17%, 21%, 30%, 34%, 58%, 62%, 70%, 74%, 92%, 96%, 100% { opacity: 0; }
+  2%, 19%, 32%, 60%, 72%, 94% { opacity: .55; } }
+.kamerslag-r { animation: kamerslagr 1.6s linear infinite; }
+@keyframes kamerslagr { 0%, 45%, 62%, 100% { opacity: 0; } 52% { opacity: .55; } }
+@media (prefers-reduced-motion: reduce) {
+  .zweef, .stroom, .klop, .golf, .seintje, .flikker, .kamerslag, .kamerslag-r { animation: none !important; }
+  .golf { transform: scale(.4); opacity: .5; } .seintje { stroke-dasharray: none; opacity: .7; }
+  .kamerslag, .kamerslag-r { opacity: .3; } .flikker { opacity: .8; }
+  [data-op] { transition: none; }
+}
+
+/* smal / staand */
+@media (max-width: 880px) {
+  .twee, .twee.gelijk, .twee.breed { grid-template-columns: 1fr; }
+  figure svg { max-height: none; }
+}
+
+/* afdrukken */
+@media print {
+  @page { margin: 14mm; }
+  html { font-size: 11.5pt; }
+  body { background: #fff; }
+  main { max-width: none; padding: 0; }
+  .kop .terug, .snel, .knoppen { display: none; }
+  .blok { border: 1px solid #bbb; break-inside: avoid; page-break-inside: avoid; }
+  .stap-teksten { display: block; }
+  .stap-teksten > .uit { opacity: 1; visibility: visible; margin-bottom: .6rem; }
+  figure svg { max-height: 95mm; }
+  * { animation: none !important; }
+  a { color: inherit; }
+  .voet .meer a::after { content: " (" attr(href) ")"; font-weight: 400; }
+}
+</style>
+</head>
+<body>
+<main>
+<header class="kop"><span class="praktijk">Uitleg-beeldbank</span></header>
+
+<h1>Prostaat: goedaardige vergroting en prostaatkanker</h1>
+<p class="inleiding">Veel mannen moeten vaker plassen als ze ouder worden, of hebben een zwakkere straal. Dat is vervelend, maar meestal niet gevaarlijk. Plasklachten zijn bijna nooit een teken van prostaatkanker.</p>
+<ul class="snel">
+  <li><a href="#prostaat">Wat gebeurt er?</a></li>
+  <li><a href="#verschil">Vergroting of kanker</a></li>
+  <li><a href="#zelf">Zelf doen en medicijnen</a></li>
+  <li><a href="#psa">Testen op prostaatkanker</a></li>
+  <li><a href="#bellen">Wanneer bellen?</a></li>
+</ul>
+
+<section class="blok" id="prostaat" data-stappen>
+  <h2><span class="nr">1</span>Waar zit de prostaat en wat gebeurt er?</h2>
+  <div class="knoppen" role="group" aria-label="Stappen">
+    <button type="button" data-stap="1">Gewone prostaat</button>
+    <button type="button" data-stap="2">Grotere prostaat</button>
+    <button type="button" data-stap="3">Prostaatkanker</button>
+    <button type="button" data-stap="4">Ook blaas en bekkenbodem</button>
+  </div>
+  <div class="twee">
+    <figure>
+      <svg viewBox="0 0 600 560" role="img" aria-labelledby="pr-t">
+        <title id="pr-t">Schematische tekening van de blaas met daaronder de prostaat. De plasbuis loopt van de blaas dwars door het midden van de prostaat naar buiten. Een grotere prostaat kan de plasbuis dichtdrukken. Prostaatkanker groeit meestal aan de buitenkant van de prostaat; de plasbuis blijft dan vrij.</title>
+        <!-- urineleiders en blaas -->
+        <path d="M168,14 C182,44 188,66 196,94 M432,14 C418,44 412,66 404,94" stroke="#d39a8a" stroke-width="12" fill="none" stroke-linecap="round"/>
+        <path d="M300,262 C230,262 140,215 140,140 C140,70 215,36 300,36 C385,36 460,70 460,140 C460,215 370,262 300,262 Z" fill="#fbefb8" stroke="#d39a8a" stroke-width="14"/>
+        <path d="M300,262 C230,262 140,215 140,140 C140,70 215,36 300,36 C385,36 460,70 460,140 C460,215 370,262 300,262 Z" fill="none" stroke="#2a6f97" stroke-width="8" stroke-dasharray="14 8" data-op="4"/>
+        <text x="300" y="140" text-anchor="middle" font-size="24" font-weight="700" fill="#8a4035">blaas</text>
+        <text x="300" y="166" text-anchor="middle" font-size="16" fill="#5d5753">met plas</text>
+        <text x="300" y="196" text-anchor="middle" font-size="16" font-weight="700" fill="#2a6f97" data-op="4">blaasspier</text>
+        <!-- bekkenbodem -->
+        <path d="M110,432 C190,458 252,468 286,468 M314,468 C348,468 410,458 490,432" stroke="#b5705f" stroke-width="14" fill="none" stroke-dasharray="16 5"/>
+        <path d="M110,432 C190,458 252,468 286,468 M314,468 C348,468 410,458 490,432" stroke="#2a6f97" stroke-width="6" fill="none" data-op="4"/>
+        <g font-size="15" text-anchor="middle" fill="#5d5753" data-op="1,2,3"><text x="520" y="470">bekkenbodem-</text><text x="520" y="489">spieren</text></g>
+        <g font-size="16" font-weight="700" text-anchor="middle" fill="#2a6f97" data-op="4"><text x="520" y="470">bekkenbodem-</text><text x="520" y="489">spieren</text></g>
+        <!-- gewone prostaat (stap 1, 3, 4) -->
+        <g data-op="1,3,4">
+          <ellipse cx="300" cy="330" rx="92" ry="72" fill="#f2c4b0" stroke="#c9675b" stroke-width="4"/>
+          <rect x="288" y="250" width="24" height="256" rx="4" fill="#fbefb8" stroke="#c9867a" stroke-width="3"/>
+          <path class="stroom" d="M300,262 L300,500" stroke="#e0b400" stroke-width="9" fill="none"/>
+          <path class="stroom" d="M300,512 L300,548" stroke="#e0b400" stroke-width="9" fill="none"/>
+        </g>
+        <!-- grotere prostaat (stap 2) -->
+        <g data-op="2">
+          <ellipse cx="300" cy="322" rx="135" ry="98" fill="#f2c4b0" stroke="#c9675b" stroke-width="4"/>
+          <path d="M288,250 L312,250 L312,262 C312,285 303,295 303,322 C303,350 312,360 312,384 L312,506 L288,506 L288,384 C288,360 297,350 297,322 C297,295 288,285 288,262 Z" fill="#fbefb8" stroke="#c9867a" stroke-width="3"/>
+          <path class="stroom traag" d="M300,262 L300,500" stroke="#e0b400" stroke-width="3" fill="none"/>
+          <g fill="#e0b400"><circle cx="300" cy="516" r="3"/><circle cx="300" cy="532" r="3"/><circle cx="300" cy="548" r="3"/></g>
+          <g stroke="#b85c00" stroke-width="5" stroke-linecap="round" fill="none">
+            <path d="M206,322 L276,322 M264,310 L278,322 L264,334"/>
+            <path d="M394,322 L324,322 M336,310 L322,322 L336,334"/>
+          </g>
+          <text x="100" y="318" text-anchor="middle" font-size="16" font-weight="700" fill="#b85c00">drukt op</text>
+          <text x="100" y="338" text-anchor="middle" font-size="16" font-weight="700" fill="#b85c00">de plasbuis</text>
+        </g>
+        <!-- binnenkant en buitenkant (stap 3) -->
+        <g data-op="3">
+          <ellipse cx="300" cy="326" rx="50" ry="48" fill="#f7d6c8" stroke="#c9675b" stroke-width="2.5" stroke-dasharray="6 5"/>
+          <rect x="288" y="250" width="24" height="256" rx="4" fill="#fbefb8" stroke="#c9867a" stroke-width="3"/>
+          <path class="stroom" d="M300,262 L300,500" stroke="#e0b400" stroke-width="9" fill="none"/>
+          <path d="M346,342 C354,330 372,334 378,346 C384,360 372,374 358,372 C344,371 338,355 346,342 Z" fill="#7a2a5a" stroke="#4f1638" stroke-width="2"/>
+          <path d="M380,356 L455,392" stroke="#8f8f8f" stroke-width="2"/>
+          <text x="520" y="392" text-anchor="middle" font-size="16" font-weight="700" fill="#7a2a5a">prostaatkanker</text>
+          <text x="520" y="412" text-anchor="middle" font-size="14" fill="#5d5753">(buitenkant)</text>
+          <path d="M262,312 L140,286" stroke="#8f8f8f" stroke-width="2"/>
+          <text x="80" y="282" text-anchor="middle" font-size="15" font-weight="700" fill="#24201f">binnenkant</text>
+          <text x="80" y="300" text-anchor="middle" font-size="14" fill="#5d5753">(rond de plasbuis)</text>
+          <path d="M226,372 L140,392" stroke="#8f8f8f" stroke-width="2"/>
+          <text x="80" y="398" text-anchor="middle" font-size="15" font-weight="700" fill="#24201f">buitenkant</text>
+          <text x="322" y="430" font-size="15" font-weight="700" fill="#2f7d5b">plasbuis vrij</text>
+        </g>
+        <!-- vaste labels -->
+        <path d="M384,318 L460,300" stroke="#8f8f8f" stroke-width="2" data-op="1,4"/>
+        <text x="520" y="298" text-anchor="middle" font-size="19" font-weight="700" fill="#8a4035">prostaat</text>
+        <text x="520" y="318" text-anchor="middle" font-size="14" fill="#5d5753" data-op="1">(zo groot als</text>
+        <text x="520" y="335" text-anchor="middle" font-size="14" fill="#5d5753" data-op="1">een kastanje)</text>
+        <text x="520" y="318" text-anchor="middle" font-size="14" font-weight="700" fill="#b85c00" data-op="2">groter, goedaardig</text>
+        <path d="M286,486 L218,500" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="210" y="506" text-anchor="end" font-size="17" font-weight="700" fill="#24201f">plasbuis</text>
+        <text x="320" y="552" font-size="14" fill="#5d5753">naar buiten (penis)</text>
+      </svg>
+      <ul class="legenda">
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="#fbefb8" stroke="#d39a8a" stroke-width="2"/></svg>plas</li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><ellipse cx="10" cy="10" rx="9" ry="7" fill="#f2c4b0" stroke="#c9675b" stroke-width="2"/></svg>prostaat</li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="#7a2a5a"/></svg>kanker</li>
+      </ul>
+    </figure>
+    <div class="stap-teksten">
+      <div data-op="1"><h3>Een gewone prostaat</h3>
+        <p class="groot">De prostaat zit <strong>onder je blaas</strong>, <strong>rond de plasbuis</strong>. Hij is zo groot als een kastanje.</p>
+        <p class="groot">Je plas stroomt van de blaas door de plasbuis naar buiten. De plasbuis loopt dwars door het <strong>midden</strong> van de prostaat.</p>
+        <p>De prostaat maakt het vocht waarin zaadcellen zwemmen.</p></div>
+      <div data-op="2"><h3>Een grotere prostaat</h3>
+        <p class="groot">Als je ouder wordt, wordt de prostaat vaak <strong>groter</strong>. Dat is <strong>goedaardig</strong>: het is geen kanker.</p>
+        <p class="groot">Een grotere prostaat kan op de plasbuis <strong>drukken</strong>. Dan kan je straal zwakker worden, druppel je na of moet je vaker plassen, ook 's nachts.</p>
+        <p>Niet elke man met een grotere prostaat heeft daar last van. En plasklachten komen vaak ook door andere dingen.</p></div>
+      <div data-op="3"><h3>Prostaatkanker</h3>
+        <p class="groot">Prostaatkanker groeit meestal aan de <strong>buitenkant</strong> van de prostaat. De plasbuis zit in het midden.</p>
+        <p class="groot">Daarom drukt prostaatkanker bijna nooit op de plasbuis. Prostaatkanker geeft meestal <strong>geen plasklachten</strong>, en vaak helemaal geen klachten.</p>
+        <p>Alleen als de kanker al ver gegroeid is, geeft hij soms klachten.</p></div>
+      <div data-op="4"><h3>Meestal meer dingen tegelijk</h3>
+        <p class="groot">Plasklachten komen meestal door <strong>meer dingen tegelijk</strong>, niet alleen door de prostaat:</p>
+        <ul class="punten">
+          <li>De <strong>blaasspier</strong> werkt minder goed.</li>
+          <li>De <strong>bekkenbodemspieren</strong> zijn te slap of te gespannen.</li>
+          <li>De prostaat drukt op de plasbuis.</li>
+          <li>Harde poep, te zwaar zijn, veel koffie of alcohol, of sommige medicijnen.</li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="blok" id="verschil">
+  <h2><span class="nr">2</span>Grotere prostaat of prostaatkanker: het verschil</h2>
+  <div class="kaarten">
+    <div class="kaart oranje">
+      <h3>Grotere prostaat</h3>
+      <p class="wanneer">Goedaardig, geen kanker</p>
+      <ul class="punten">
+        <li>Heel gewoon bij het ouder worden.</li>
+        <li>Kan op de plasbuis drukken.</li>
+        <li>Kan plasklachten geven, maar dat hoeft niet.</li>
+      </ul>
+    </div>
+    <div class="kaart">
+      <h3>Prostaatkanker</h3>
+      <p class="wanneer">Meestal aan de buitenkant</p>
+      <ul class="punten">
+        <li>Geeft meestal geen klachten.</li>
+        <li>Groeit meestal langzaam. Vaak is behandelen dan niet nodig.</li>
+        <li>Soms groeit hij sneller. Dan is vaak wel behandeling nodig.</li>
+      </ul>
+    </div>
+    <div class="kaart groen">
+      <h3>Goed om te weten</h3>
+      <p>Plasklachten zijn <strong>geen teken van prostaatkanker</strong>. Bij 1 van de 3 mannen gaan plasklachten vanzelf over.</p>
+    </div>
+  </div>
+</section>
+
+<section class="blok" id="zelf">
+  <h2><span class="nr">3</span>Wat kun je zelf doen? En medicijnen</h2>
+  <div class="twee gelijk">
+    <div>
+      <h3>Zelf doen</h3>
+      <ul class="punten groot">
+        <li>Neem de <strong>tijd</strong> om te plassen. Probeer te ontspannen en <strong>niet te persen</strong>.</li>
+        <li>Probeer of plassen <strong>zittend of staand</strong> beter gaat.</li>
+        <li><strong>Beweeg</strong> genoeg en eet <strong>vezels</strong>, zodat je poep zacht blijft.</li>
+        <li>Probeer <strong>2 weken geen koffie of alcohol</strong>. Helpt het? Drink er dan minder van.</li>
+        <li>Vaak 's nachts plassen? Drink 's avonds minder en de laatste <strong>2 uur</strong> voor het slapen niets.</li>
+        <li>Nadruppelen? Duw na het plassen met je vinger de plasbuis leeg, van de balzak naar de punt van je penis.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Helpt dat niet genoeg?</h3>
+      <div class="kaarten">
+        <div class="kaart groen"><h3>Oefeningen</h3><p>Oefeningen voor je bekkenbodemspieren. Soms met hulp van een bekken-fysiotherapeut.</p></div>
+        <div class="kaart blauw"><h3>Medicijnen</h3><p>Bij een zwakke straal of nadruppelen: een medicijn dat de spieren in de prostaat en plasbuis ontspant. Bij steeds heel nodig moeten: een medicijn waardoor er meer plas in je blaas past.</p></div>
+      </div>
+      <p class="klein">Medicijnen maken de klachten minder, maar meestal niet helemaal weg. Probeer ze eerst 6 weken. Middelen met dwergpalm of zaagpalm uit de winkel helpen waarschijnlijk niet.</p>
+    </div>
+  </div>
+</section>
+
+<section class="blok" id="psa">
+  <h2><span class="nr">4</span>Testen op prostaatkanker (PSA)</h2>
+  <p class="groot">Heb je alleen plasklachten? Dan is een bloedtest op prostaatkanker (PSA) <strong>niet nodig</strong>.</p>
+  <p>Denk je erover om je toch te laten testen? Dat mag je zelf kiezen. Testen heeft voordelen en nadelen. Bespreek het met je huisarts. De test is bloed prikken (PSA). Soms voelt de huisarts ook via de anus aan je prostaat.</p>
+  <div class="kaarten">
+    <div class="kaart groen">
+      <h3>Voordelen</h3>
+      <ul class="punten">
+        <li>Is de uitslag goed? Dan maak je je minder zorgen.</li>
+        <li>Soms wordt snel groeiende kanker vroeg gevonden. Die kans is klein.</li>
+      </ul>
+    </div>
+    <div class="kaart oranje">
+      <h3>Nadelen</h3>
+      <ul class="punten">
+        <li>Is de uitslag niet goed? Dan volgen meer onderzoeken. Vaak blijkt dan dat je toch geen kanker hebt.</li>
+        <li>Je kunt behandeld worden voor kanker die nooit klachten had gegeven. Een behandeling kan blijvende klachten geven, zoals plas verliezen of moeite met een stijve penis.</li>
+      </ul>
+    </div>
+    <div class="kaart">
+      <h3>Goed om te weten</h3>
+      <p>Mannen die zich laten testen, leven gemiddeld even lang als mannen die zich niet laten testen.</p>
+      <p>Zit er een erfelijke fout in je BRCA2-gen? Dan raden huisartsen testen meestal wel aan, vanaf een bepaalde leeftijd.</p>
+      <p>Ben je 75 jaar of ouder, of ernstig ziek? Dan krijg je meestal geen test.</p>
+    </div>
+  </div>
+</section>
+
+<section class="blok" id="bellen">
+  <h2><span class="nr">5</span>Wanneer bellen?</h2>
+  <div class="bel">
+    <div class="kaart spoed">
+      <h3><span class="label">Spoed</span> Je kunt opeens niet plassen</h3>
+      <p>Je moet heel nodig, maar het lukt niet. Ook niet als je rustig op de wc zit. <strong>Bel direct je huisarts of de huisartsenpost.</strong></p>
+    </div>
+    <div class="kaart spoed">
+      <h3><span class="label">Spoed</span> Pijn bij plassen en koorts</h3>
+      <p>Plassen doet pijn en je bent ook ziek of hebt koorts. Dit kan een ontsteking zijn. <strong>Bel direct je huisarts of de huisartsenpost.</strong></p>
+    </div>
+    <div class="kaart spoed">
+      <h3><span class="label">Vandaag</span> Vaak plassen en het doet pijn</h3>
+      <p>Dit kan een blaasontsteking zijn. Mannen krijgen daar altijd antibiotica voor. <strong>Bel dezelfde dag.</strong></p>
+    </div>
+    <div class="kaart">
+      <h3>Afspraak maken</h3>
+      <ul class="punten">
+        <li>Er zit bloed in je plas.</li>
+        <li>Er komt pus of ander vocht uit je penis.</li>
+        <li>Je plast vooral 's nachts heel vaak en je bent ook benauwd.</li>
+        <li>Je kunt niet goed uitplassen, plast heel vaak kleine beetjes én kunt je plas niet ophouden.</li>
+        <li>Je hebt veel last, of je maakt je zorgen over prostaatkanker.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<footer class="voet">
+<p class="meer">Meer lezen: <a href="https://www.thuisarts.nl/problemen-met-plassen-bij-mannen" target="_blank" rel="noopener noreferrer">thuisarts.nl/problemen-met-plassen-bij-mannen</a> · <a href="https://www.thuisarts.nl/prostaatkanker" target="_blank" rel="noopener noreferrer">thuisarts.nl/prostaatkanker</a> · <a href="https://www.thuisarts.nl/testen-op-prostaatkanker" target="_blank" rel="noopener noreferrer">thuisarts.nl/testen-op-prostaatkanker</a></p>
+<p>Deze uitleg is algemeen. Wat voor jou geldt, bespreek je met je huisarts.</p>
+<p class="klein">Tekst en tekeningen: Huisartsenpraktijk Tolgaarde / Socev, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.nl">CC BY-SA 4.0</a>.</p>
+</footer>
+</main>
+<script>
+// Stap-voor-stap-knoppen. Elk blok met data-stappen heeft knoppen (data-stap="n")
+// en onderdelen met data-op="1,3": die zijn alleen zichtbaar bij die stappen.
+(function () {
+  document.querySelectorAll("[data-stappen]").forEach(function (doos) {
+    var knoppen = doos.querySelectorAll("button[data-stap]");
+    function zet(n) {
+      doos.querySelectorAll("[data-op]").forEach(function (el) {
+        var aan = el.getAttribute("data-op").split(",").indexOf(String(n)) !== -1;
+        el.classList.toggle("uit", !aan);
+        el.setAttribute("aria-hidden", aan ? "false" : "true");
+      });
+      knoppen.forEach(function (k) {
+        k.setAttribute("aria-pressed", k.getAttribute("data-stap") === String(n) ? "true" : "false");
+      });
+    }
+    knoppen.forEach(function (k) {
+      k.addEventListener("click", function () { zet(Number(k.getAttribute("data-stap"))); });
+    });
+    zet(Number(doos.getAttribute("data-start") || 1));
+  });
+})();
+</script>
+</body>
+</html>
+
