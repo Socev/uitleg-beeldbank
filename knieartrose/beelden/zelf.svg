@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 280" role="img" aria-labelledby="ka-opbouw-t" width="540" height="280">
+        <title id="ka-opbouw-t">Voorbeeld van rustig opbouwen: week 1 tien minuten bewegen per dag, en elke week vijf minuten langer, tot een half uur per dag.</title>
+        <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+</style><g font-size="16" text-anchor="middle" fill="#5d5753">
+          <text x="60" y="262">week 1</text><text x="165" y="262">week 2</text><text x="270" y="262">week 3</text><text x="375" y="262">week 4</text><text x="480" y="262">week 5</text>
+        </g>
+        <path d="M14,236 L526,236" stroke="#e9e2dc" stroke-width="3"/>
+        <g fill="#e3f0f8" stroke="#2a6f97" stroke-width="3">
+          <rect x="25" y="186" width="70" height="50" rx="8"/>
+          <rect x="130" y="161" width="70" height="75" rx="8"/>
+          <rect x="235" y="136" width="70" height="100" rx="8"/>
+          <rect x="340" y="111" width="70" height="125" rx="8"/>
+        </g>
+        <rect x="445" y="86" width="70" height="150" rx="8" fill="#e4f2ea" stroke="#2f7d5b" stroke-width="3"/>
+        <g font-size="18" font-weight="700" text-anchor="middle" fill="#24201f">
+          <text x="60" y="176">10 min</text><text x="165" y="151">15 min</text><text x="270" y="126">20 min</text><text x="375" y="101">25 min</text>
+        </g>
+        <text x="480" y="76" text-anchor="middle" font-size="18" font-weight="700" fill="#2f7d5b">half uur</text>
+        <text x="20" y="34" font-size="20" font-weight="700" fill="#24201f">Elke week 5 minuten langer</text>
+      </svg>

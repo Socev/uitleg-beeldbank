@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 560" role="img" aria-labelledby="dm-t" width="600" height="560">
+        <title id="dm-t">Schematische tekening van een bloedvat met suikerkorrels, de alvleesklier en een lichaamscel met een deurtje. Insuline uit de alvleesklier werkt als een sleutel die het deurtje van de cel opent, zodat suiker als brandstof de cel in kan. Bij diabetes type 2 werkt het slot slecht en blijft de suiker in het bloed. Na jaren kan dat de ogen, nieren, zenuwen in de voeten en het hart en de bloedvaten beschadigen. Bewegen, afvallen en medicijnen helpen.</title>
+        <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+/* tekeningen: kleuren en bewegingen */
+.zweef { animation: zweef 3.2s ease-in-out infinite alternate; transform-box: fill-box; }
+.zweef.b { animation-delay: -1.1s; } .zweef.c { animation-delay: -2.1s; } .zweef.d { animation-duration: 2.6s; }
+@keyframes zweef { from { transform: translate(-3px, -4px); } to { transform: translate(4px, 4px); } }
+.stroom { stroke-dasharray: 10 14; animation: stroom 1.4s linear infinite; }
+.stroom.traag { animation-duration: 3.2s; }
+@keyframes stroom { to { stroke-dashoffset: -48; } }
+.klop { transform-box: fill-box; transform-origin: center; animation: klop 1s ease-in-out infinite; }
+.klop.zwak { animation: klopzwak 1.25s ease-in-out infinite; }
+@keyframes klop { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.13); } }
+@keyframes klopzwak { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.04); } }
+.golf { transform-box: fill-box; transform-origin: center; animation: golf 1.6s ease-out infinite; }
+@keyframes golf { 0% { transform: scale(.1); opacity: .9; } 70% { opacity: .35; } 100% { transform: scale(1); opacity: 0; } }
+.seintje { stroke-dasharray: 26 400; animation: seintje 1.6s linear infinite; }
+@keyframes seintje { 0%, 30% { stroke-dashoffset: 26; } 75%, 100% { stroke-dashoffset: -260; } }
+.flikker { animation: flikker .9s steps(2, jump-none) infinite; }
+.flikker.b { animation-duration: .7s; animation-delay: -.3s; } .flikker.c { animation-duration: 1.1s; animation-delay: -.5s; }
+@keyframes flikker { 0% { opacity: 1; } 100% { opacity: .15; } }
+.kamerslag { animation: kamerslag 4.6s linear infinite; }
+@keyframes kamerslag { 0%, 4%, 17%, 21%, 30%, 34%, 58%, 62%, 70%, 74%, 92%, 96%, 100% { opacity: 0; }
+  2%, 19%, 32%, 60%, 72%, 94% { opacity: .55; } }
+.kamerslag-r { animation: kamerslagr 1.6s linear infinite; }
+@keyframes kamerslagr { 0%, 45%, 62%, 100% { opacity: 0; } 52% { opacity: .55; } }
+@media (prefers-reduced-motion: reduce) {
+  .zweef, .stroom, .klop, .golf, .seintje, .flikker, .kamerslag, .kamerslag-r { animation: none !important; }
+  .golf { transform: scale(.4); opacity: .5; } .seintje { stroke-dasharray: none; opacity: .7; }
+  .kamerslag, .kamerslag-r { opacity: .3; } .flikker { opacity: .8; }
+}
+</style><defs>
+          <rect id="dm-suiker" x="-8" y="-8" width="16" height="16" rx="3" fill="#fde6c4" stroke="#b85c00" stroke-width="2.5"/>
+          <g id="dm-sleutel">
+            <circle cx="0" cy="0" r="9" fill="#fff" stroke="#2a6f97" stroke-width="4"/>
+            <path d="M9,0 L40,0 M32,0 L32,9 M39,0 L39,9" stroke="#2a6f97" stroke-width="4" stroke-linecap="round" fill="none"/>
+          </g>
+          <path id="dm-vlam" d="M0,-30 C12,-16 20,-6 20,8 A20,20 0 0 1 -20,8 C-20,-4 -12,-10 -6,-22 C-3,-12 3,-10 0,-30 Z"/>
+        </defs>
+
+        <!-- bloedvat -->
+        <rect x="60" y="0" width="110" height="520" fill="#f8dcd4"/>
+        <path class="stroom traag" d="M115,0 L115,520" stroke="#eab3a8" stroke-width="5" fill="none"/>
+        <path d="M60,0 L60,520 M170,0 L170,520" stroke="#d9a395" stroke-width="8"/>
+        <text x="115" y="546" text-anchor="middle" font-size="17" font-weight="700" fill="#8a4035">bloedvat</text>
+
+        <!-- alvleesklier -->
+        <path d="M200,58 C198,32 238,28 268,40 C306,54 350,40 392,48 C414,52 414,74 392,78 C350,84 308,76 276,88 C242,100 202,86 200,58 Z" fill="#f2c4b0" stroke="#c9675b" stroke-width="3"/>
+        <path d="M196,64 L176,64" stroke="#2a6f97" stroke-width="3" stroke-dasharray="4 4"/>
+        <text x="428" y="58" font-size="18" font-weight="700" fill="#8a4035">alvleesklier</text>
+        <text x="428" y="79" font-size="15" fill="#5d5753">maakt insuline</text>
+        <use href="#dm-sleutel" x="85" y="64"/>
+
+        <!-- suiker in het bloed: altijd -->
+        <g>
+          <use href="#dm-suiker" x="135" y="112"/>
+          <use href="#dm-suiker" x="100" y="330"/>
+          <use href="#dm-suiker" x="140" y="472"/>
+        </g>
+        <!-- extra sleutels: gezond en wat helpt -->
+        <g>
+          <use href="#dm-sleutel" x="88" y="250"/>
+          <use href="#dm-sleutel" x="82" y="420"/>
+        </g>
+        <!-- wat helpt: iets meer suiker dan gezond -->
+        <!-- te veel suiker: diabetes en na jaren -->
+        <!-- lichaamscel met deurtje (stap 1, 2, 4) -->
+        <g>
+          <ellipse cx="395" cy="365" rx="185" ry="150" fill="#fbe9e1" stroke="#c9675b" stroke-width="5"/>
+          <rect x="203" y="326" width="20" height="78" fill="#fbe9e1"/>
+          <rect x="198" y="318" width="28" height="10" rx="3" fill="#8a4035"/>
+          <rect x="198" y="402" width="28" height="10" rx="3" fill="#8a4035"/>
+          <text x="395" y="458" text-anchor="middle" font-size="19" font-weight="700" fill="#8a4035">lichaamscel</text>
+          <text x="395" y="480" text-anchor="middle" font-size="15" fill="#5d5753">bijvoorbeeld een spiercel</text>
+          <path d="M213,414 L206,446" stroke="#8f8f8f" stroke-width="2"/>
+          <text x="180" y="466" font-size="16" font-weight="700" fill="#24201f">deurtje</text>
+        </g>
+        <!-- deurtje open, sleutel in het slot, suiker naar binnen (stap 1, 4) -->
+        <g>
+          <polygon points="213,328 277,291 283,301 219,338" fill="#d9a074" stroke="#8a4035" stroke-width="2"/>
+          <path d="M190,336 C190,322 202,322 202,330" stroke="#2f7d5b" stroke-width="3" fill="none"/>
+          <rect x="186" y="336" width="18" height="18" rx="3" fill="#2f7d5b"/>
+          <use href="#dm-sleutel" x="138" y="345"/>
+          <path class="stroom" d="M150,385 L330,385" stroke="#b85c00" stroke-width="4" fill="none"/>
+          <use class="zweef" href="#dm-suiker" x="250" y="385"/>
+          <use class="zweef b" href="#dm-suiker" x="300" y="378"/>
+          <g transform="translate(350,378)">
+            <use class="klop" href="#dm-vlam" fill="#f0a030"/>
+          </g>
+          <text x="388" y="364" font-size="18" font-weight="700" fill="#2f7d5b">brandstof</text>
+          <text x="388" y="386" font-size="15" fill="#5d5753">energie voor de cel</text>
+        </g>
+        <!-- deurtje dicht, slot werkt slecht (stap 2) -->
+        <!-- na jaren: schade (stap 3) -->
+        <!-- kopregel per stap -->
+        <g>
+          <text x="215" y="150" font-size="18" font-weight="700" fill="#2a6f97">insuline is de sleutel</text>
+          <text x="215" y="174" font-size="15" fill="#5d5753">het deurtje gaat open, suiker gaat de cel in</text>
+        </g>
+        </svg>

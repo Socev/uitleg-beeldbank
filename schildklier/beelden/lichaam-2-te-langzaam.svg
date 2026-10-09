@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 560" role="img" aria-labelledby="sk-t" width="600" height="560">
+        <title id="sk-t">Tekening van hoofd, hals en romp. De schildklier zit als een vlinder voor de luchtpijp in de hals. Onderin de hersenen zit de hypofyse, die met het hormoon TSH een seintje geeft aan de schildklier. De schildklier maakt schildklier-hormoon, dat met het bloed naar het hele lichaam gaat. Een meter in de romp laat het tempo van het lichaam zien. Bij een te langzaam werkende schildklier is er weinig hormoon, veel TSH en gaat het lichaam langzamer. Met een tablet met schildklier-hormoon komt het lichaam weer op tempo.</title>
+        <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+/* tekeningen: kleuren en bewegingen */
+.zweef { animation: zweef 3.2s ease-in-out infinite alternate; transform-box: fill-box; }
+.zweef.b { animation-delay: -1.1s; } .zweef.c { animation-delay: -2.1s; } .zweef.d { animation-duration: 2.6s; }
+@keyframes zweef { from { transform: translate(-3px, -4px); } to { transform: translate(4px, 4px); } }
+.stroom { stroke-dasharray: 10 14; animation: stroom 1.4s linear infinite; }
+.stroom.traag { animation-duration: 3.2s; }
+@keyframes stroom { to { stroke-dashoffset: -48; } }
+.klop { transform-box: fill-box; transform-origin: center; animation: klop 1s ease-in-out infinite; }
+.klop.zwak { animation: klopzwak 1.25s ease-in-out infinite; }
+@keyframes klop { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.13); } }
+@keyframes klopzwak { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.04); } }
+.golf { transform-box: fill-box; transform-origin: center; animation: golf 1.6s ease-out infinite; }
+@keyframes golf { 0% { transform: scale(.1); opacity: .9; } 70% { opacity: .35; } 100% { transform: scale(1); opacity: 0; } }
+.seintje { stroke-dasharray: 26 400; animation: seintje 1.6s linear infinite; }
+@keyframes seintje { 0%, 30% { stroke-dashoffset: 26; } 75%, 100% { stroke-dashoffset: -260; } }
+.flikker { animation: flikker .9s steps(2, jump-none) infinite; }
+.flikker.b { animation-duration: .7s; animation-delay: -.3s; } .flikker.c { animation-duration: 1.1s; animation-delay: -.5s; }
+@keyframes flikker { 0% { opacity: 1; } 100% { opacity: .15; } }
+.kamerslag { animation: kamerslag 4.6s linear infinite; }
+@keyframes kamerslag { 0%, 4%, 17%, 21%, 30%, 34%, 58%, 62%, 70%, 74%, 92%, 96%, 100% { opacity: 0; }
+  2%, 19%, 32%, 60%, 72%, 94% { opacity: .55; } }
+.kamerslag-r { animation: kamerslagr 1.6s linear infinite; }
+@keyframes kamerslagr { 0%, 45%, 62%, 100% { opacity: 0; } 52% { opacity: .55; } }
+@media (prefers-reduced-motion: reduce) {
+  .zweef, .stroom, .klop, .golf, .seintje, .flikker, .kamerslag, .kamerslag-r { animation: none !important; }
+  .golf { transform: scale(.4); opacity: .5; } .seintje { stroke-dasharray: none; opacity: .7; }
+  .kamerslag, .kamerslag-r { opacity: .3; } .flikker { opacity: .8; }
+}
+</style><!-- lichaam -->
+        <g fill="#ece5df">
+          <ellipse cx="170" cy="90" rx="56" ry="64"/>
+          <rect x="128" y="146" width="84" height="100"/>
+          <path d="M128,238 Q62,248 48,300 L40,546 L300,546 L292,300 Q278,248 212,238 Z"/>
+        </g>
+        <!-- hersenen en hypofyse -->
+        <path d="M170,40 C200,36 216,56 214,76 C214,96 198,106 176,104 L164,104 C142,106 126,96 126,76 C124,56 140,36 170,40 Z" fill="#f6d6cd" stroke="#d9a395" stroke-width="2.5"/>
+        <path d="M170,104 L170,110" stroke="#2a6f97" stroke-width="3"/>
+        <circle cx="170" cy="115" r="7" fill="#2a6f97"/>
+        <path d="M214,70 L330,66" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="340" y="72" font-size="17" font-weight="700" fill="#8a4035">hersenen</text>
+        <path d="M178,115 L330,112" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="340" y="118" font-size="17" font-weight="700" fill="#2a6f97">hypofyse</text>
+        <text x="340" y="137" font-size="14" fill="#5d5753">(onderin je hersenen)</text>
+        <!-- seintje TSH -->
+        <path d="M163,119 C96,126 92,190 128,204" stroke="#2a6f97" stroke-width="7" fill="none" stroke-dasharray="6 5"/>
+        <path class="seintje" d="M163,119 C96,126 92,190 128,204" stroke="#b85c00" stroke-width="11" fill="none" stroke-linecap="round"/>
+        <g text-anchor="middle" font-weight="700" fill="#b85c00">
+          <text x="58" y="104" font-size="17">veel TSH</text>
+          <text x="58" y="123" font-size="14">extra seintje</text>
+        </g>
+        <!-- luchtpijp -->
+        <rect x="162" y="150" width="16" height="92" rx="4" fill="#dfe7ec" stroke="#b9c6cf" stroke-width="2"/>
+        <g stroke="#b9c6cf" stroke-width="2"><path d="M162,166 L178,166 M162,180 L178,180 M162,226 L178,226"/></g>
+        <!-- schildklier: gewoon -->
+        <!-- schildklier: werkt te langzaam -->
+        <g fill="#f6dcd3" stroke="#c9867a" stroke-width="3">
+          <ellipse cx="149" cy="205" rx="19" ry="30"/>
+          <ellipse cx="191" cy="205" rx="19" ry="30"/>
+          <rect x="158" y="206" width="24" height="14" rx="5" stroke="none"/>
+        </g>
+        <path d="M212,204 L330,198" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="340" y="204" font-size="19" font-weight="700" fill="#8a4035">schildklier</text>
+        <text x="340" y="224" font-size="15" font-weight="700" fill="#b85c00">maakt te weinig hormoon</text>
+        <!-- bloedbaan -->
+        <g stroke="#f0b6ae" stroke-width="12" fill="none" stroke-linecap="round">
+          <path d="M170,232 L170,300"/>
+          <path d="M170,300 C120,315 76,350 72,520"/>
+          <path d="M170,300 C220,315 264,350 268,520"/>
+        </g>
+        <g stroke="#2f7d5b" stroke-width="3" fill="none" stroke-linecap="round">
+          <path class="stroom traag" d="M170,232 L170,300"/>
+          <path class="stroom traag" d="M170,300 C120,315 76,350 72,520"/>
+          <path class="stroom traag" d="M170,300 C220,315 264,350 268,520"/>
+        </g>
+        <!-- tempometer -->
+        <g fill="none" stroke-width="14">
+          <path d="M112,445 A58,58 0 0 1 141,394.8" stroke="#f2c08a"/>
+          <path d="M141,394.8 A58,58 0 0 1 199,394.8" stroke="#9fd0b6"/>
+          <path d="M199,394.8 A58,58 0 0 1 228,445" stroke="#d8d2cc"/>
+        </g>
+        <path d="M112,445 A58,58 0 0 1 141,394.8" fill="none" stroke="#b85c00" stroke-width="14"/>
+        <path d="M170,445 L130,422" stroke="#24201f" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="170" cy="445" r="7" fill="#24201f"/>
+        <text x="170" y="476" text-anchor="middle" font-size="16" font-weight="700" fill="#b85c00">lichaam gaat langzamer</text>
+        <text x="170" y="497" text-anchor="middle" font-size="14" fill="#5d5753">tempo van je lichaam</text>
+        <!-- stap 1: genoeg hormoon -->
+        <!-- stap 2: klachten -->
+        <g>
+          <text x="340" y="296" font-size="17" font-weight="700" fill="#b85c00">te weinig hormoon</text>
+          <text x="340" y="316" font-size="15" fill="#5d5753">dit kun je merken:</text>
+          <g fill="#b85c00"><circle cx="347" cy="345" r="5"/><circle cx="347" cy="375" r="5"/><circle cx="347" cy="405" r="5"/><circle cx="347" cy="435" r="5"/><circle cx="347" cy="465" r="5"/><circle cx="347" cy="495" r="5"/></g>
+          <g font-size="17" fill="#24201f">
+            <text x="362" y="351">snel koud</text>
+            <text x="362" y="381">moe of sloom</text>
+            <text x="362" y="411">zwaarder worden</text>
+            <text x="362" y="441">moeilijk poepen</text>
+            <text x="362" y="471">droge huid</text>
+            <text x="362" y="501">droog haar, haaruitval</text>
+          </g>
+        </g>
+        <!-- stap 3: tablet -->
+        </svg>
