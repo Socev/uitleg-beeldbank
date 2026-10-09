@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 230" role="img" aria-labelledby="mn-tijd-t" width="900" height="230">
+      <title id="mn-tijd-t">Tijdlijn na een draaibeweging. De eerste dagen: rust, maar buig en strek je knie af en toe, leg je been hoog en koel als dat prettig is. Daarna: elke week iets meer bewegen, zoals wandelen en fietsen. Na 4 of 5 weken nog veel last: een fysiotherapeut of oefentherapeut kan helpen. Bij de meeste mensen is de knie binnen 3 maanden een stuk beter.</title>
+      <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+</style><path d="M40,60 L860,60" stroke="#e9e2dc" stroke-width="6" stroke-linecap="round"/>
+      <g fill="#fff" stroke-width="5">
+        <circle cx="120" cy="60" r="16" stroke="#2a6f97"/>
+        <circle cx="340" cy="60" r="16" stroke="#2a6f97"/>
+        <circle cx="560" cy="60" r="16" stroke="#b85c00"/>
+        <circle cx="780" cy="60" r="16" stroke="#2f7d5b"/>
+      </g>
+      <g font-size="19" font-weight="700" text-anchor="middle">
+        <text x="120" y="28" fill="#2a6f97">eerste dagen</text>
+        <text x="340" y="28" fill="#2a6f97">daarna</text>
+        <text x="560" y="28" fill="#b85c00">na 4 tot 5 weken</text>
+        <text x="780" y="28" fill="#2f7d5b">na 3 maanden</text>
+      </g>
+      <g font-size="16" text-anchor="middle" fill="#24201f">
+        <text x="120" y="108">rust, maar buig en</text>
+        <text x="120" y="130">strek je knie elk uur</text>
+        <text x="120" y="152">een paar keer</text>
+        <text x="120" y="184" fill="#5d5753">been hoog, koelen</text>
+        <text x="120" y="206" fill="#5d5753">als dat prettig is</text>
+        <text x="340" y="108">elke week iets meer:</text>
+        <text x="340" y="130">wandelen, fietsen,</text>
+        <text x="340" y="152">oefeningen</text>
+        <text x="340" y="184" fill="#5d5753">rustig weer</text>
+        <text x="340" y="206" fill="#5d5753">gaan sporten</text>
+        <text x="560" y="108">nog veel last?</text>
+        <text x="560" y="130">een fysiotherapeut of</text>
+        <text x="560" y="152">oefentherapeut kan helpen</text>
+        <text x="780" y="108">bij de meeste mensen</text>
+        <text x="780" y="130">is de knie dan een</text>
+        <text x="780" y="152">stuk beter</text>
+      </g>
+    </svg>

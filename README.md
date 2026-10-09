@@ -24,6 +24,7 @@ De onderwerpen komen van [uitleg.tolgaarde.nl](https://uitleg.tolgaarde.nl), de 
 | [Knieartrose](knieartrose/) | <img src="knieartrose/beelden/knie-2-artrose.svg" width="220" alt="Knie met artrose"> | knie in 4 stappen (gezond, artrose, sterke spieren, minder gewicht), wat je merkt, zelf doen, pijnstillers en een prik, bellen |
 | [Lage rugpijn](lage-rugpijn/) | <img src="lage-rugpijn/beelden/rug-3-hernia.svg" width="220" alt="Onderrug met een hernia"> | rug in 4 stappen (gezond, gewone rugpijn, hernia, bewegen helpt), hoe lang het duurt, zelf doen en pijnstillers, foto of scan, bellen |
 | [Schildklier (te traag)](schildklier/) | <img src="schildklier/beelden/lichaam-2-te-langzaam.svg" width="220" alt="Te langzaam werkende schildklier"> | schildklier in 3 stappen, het tablet innemen, bloed prikken en controle, zwanger worden of zijn, bellen |
+| [Meniscusklachten](meniscus/) | <img src="meniscus/beelden/knie-2-scheur-na-een-draai.svg" width="220" alt="Gescheurde meniscus na een draaibeweging"> | knie in 4 stappen (gezond, scheur na een draai, knie op slot, slijtage), na een draai of door slijtage, tijdlijn herstel, zelf doen en pijnstillers, bellen |
 
 ## Zo is een onderwerp opgebouwd
 
