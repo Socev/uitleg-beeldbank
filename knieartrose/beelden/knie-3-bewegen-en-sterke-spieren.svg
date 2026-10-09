@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 560" role="img" aria-labelledby="ka-t" width="600" height="560">
+        <title id="ka-t">Zijaanzicht van een knie met het dijbeen, het scheenbeen, de knieschijf en de bovenbeenspier. Op de uiteinden van de botten zit een glad laagje kraakbeen. Bij artrose wordt het kraakbeen dunner en ruwer en groeit er extra bot aan de randen; soms komt er vocht in de knie. Sterke spieren geven de knie steun. Minder gewicht betekent minder druk op de knie.</title>
+        <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+/* tekeningen: kleuren en bewegingen */
+.zweef { animation: zweef 3.2s ease-in-out infinite alternate; transform-box: fill-box; }
+.zweef.b { animation-delay: -1.1s; } .zweef.c { animation-delay: -2.1s; } .zweef.d { animation-duration: 2.6s; }
+@keyframes zweef { from { transform: translate(-3px, -4px); } to { transform: translate(4px, 4px); } }
+.stroom { stroke-dasharray: 10 14; animation: stroom 1.4s linear infinite; }
+.stroom.traag { animation-duration: 3.2s; }
+@keyframes stroom { to { stroke-dashoffset: -48; } }
+.klop { transform-box: fill-box; transform-origin: center; animation: klop 1s ease-in-out infinite; }
+.klop.zwak { animation: klopzwak 1.25s ease-in-out infinite; }
+@keyframes klop { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.13); } }
+@keyframes klopzwak { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.04); } }
+.golf { transform-box: fill-box; transform-origin: center; animation: golf 1.6s ease-out infinite; }
+@keyframes golf { 0% { transform: scale(.1); opacity: .9; } 70% { opacity: .35; } 100% { transform: scale(1); opacity: 0; } }
+.seintje { stroke-dasharray: 26 400; animation: seintje 1.6s linear infinite; }
+@keyframes seintje { 0%, 30% { stroke-dashoffset: 26; } 75%, 100% { stroke-dashoffset: -260; } }
+.flikker { animation: flikker .9s steps(2, jump-none) infinite; }
+.flikker.b { animation-duration: .7s; animation-delay: -.3s; } .flikker.c { animation-duration: 1.1s; animation-delay: -.5s; }
+@keyframes flikker { 0% { opacity: 1; } 100% { opacity: .15; } }
+.kamerslag { animation: kamerslag 4.6s linear infinite; }
+@keyframes kamerslag { 0%, 4%, 17%, 21%, 30%, 34%, 58%, 62%, 70%, 74%, 92%, 96%, 100% { opacity: 0; }
+  2%, 19%, 32%, 60%, 72%, 94% { opacity: .55; } }
+.kamerslag-r { animation: kamerslagr 1.6s linear infinite; }
+@keyframes kamerslagr { 0%, 45%, 62%, 100% { opacity: 0; } 52% { opacity: .55; } }
+@media (prefers-reduced-motion: reduce) {
+  .zweef, .stroom, .klop, .golf, .seintje, .flikker, .kamerslag, .kamerslag-r { animation: none !important; }
+  .golf { transform: scale(.4); opacity: .5; } .seintje { stroke-dasharray: none; opacity: .7; }
+  .kamerslag, .kamerslag-r { opacity: .3; } .flikker { opacity: .8; }
+}
+</style><defs>
+          <marker id="ka-pijl-g" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#2f7d5b"/></marker>
+        </defs>
+        <!-- been (huid) -->
+        <path d="M165,0 L365,0 C366,110 380,220 384,300 C388,370 372,420 360,470 C352,510 346,540 344,560 L222,560 C220,530 210,500 202,470 C188,420 166,370 162,300 C158,220 164,110 165,0 Z" fill="#f3ece6"/>
+        <!-- bovenbeenspier: gewoon (1,2,4) en sterk (3) -->
+        <g>
+          <path d="M200,4 C164,56 158,150 176,206 C182,224 192,232 204,234 L224,234 C246,190 258,120 256,4 Z" fill="#d9776b" stroke="#a8302c" stroke-width="3"/>
+          <g stroke="#a8302c" stroke-width="2" fill="none" opacity=".5"><path d="M210,20 C192,80 190,150 200,215"/><path d="M236,20 C228,80 226,150 216,220"/></g>
+        </g>
+        <!-- dijbeen -->
+        <path d="M256,0 L312,0 L312,200 C330,226 352,250 352,288 C352,322 326,344 292,344 C254,344 222,326 220,290 C218,258 240,228 256,200 Z" fill="#f4ead8" stroke="#c9b48f" stroke-width="3"/>
+        <!-- scheenbeen en pees van de knieschijf: gezond (1) -->
+        <!-- bij artrose (2,3,4): scheenbeen 14 px hoger, de gewrichtsspleet is smaller -->
+        <g>
+          <path d="M214,368 C214,360 222,356 234,356 L344,356 C356,356 362,362 360,372 L354,398 C346,418 322,428 316,456 L314,560 L258,560 L256,456 C250,428 226,418 220,398 Z" fill="#f4ead8" stroke="#c9b48f" stroke-width="3"/>
+          <path d="M208,296 C210,334 220,378 236,406" stroke="#d8c7ad" stroke-width="11" fill="none" stroke-linecap="round"/>
+        </g>
+        <!-- knieschijf -->
+        <ellipse cx="206" cy="266" rx="17" ry="32" fill="#f4ead8" stroke="#c9b48f" stroke-width="3"/>
+        <!-- kraakbeen gezond (1) -->
+        <!-- kraakbeen bij artrose (2,3,4): dunner en ruw, met extra bot en soms vocht -->
+        <g>
+          <g stroke="#5f9fcc" fill="none" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M226,308 L232,318 L240,324 L246,334 L256,336 L262,343 L272,342 L280,348 M300,347 L310,343 L318,343 L328,338 L336,337 L342,327 L348,312"/>
+            <path d="M230,352 L240,353 L248,351 L258,353 L268,352 M308,353 L318,351 L328,353 L338,351 L348,353"/>
+            <path d="M221,246 L226,256 L224,266 L227,276 L221,288" stroke-width="4"/>
+          </g>
+          <g fill="#f4ead8" stroke="#c9b48f" stroke-width="3" stroke-linejoin="round">
+            <path d="M350,292 L366,300 L352,312 Z"/>
+            <path d="M360,364 L374,358 L362,376 Z"/>
+            <path d="M216,366 L202,360 L214,378 Z"/>
+          </g>
+        </g>
+        <!-- stap 3: bewegen -->
+        <g>
+          <path d="M392,236 C432,282 432,398 392,444" stroke="#2f7d5b" stroke-width="7" fill="none" stroke-linecap="round" marker-start="url(#ka-pijl-g)" marker-end="url(#ka-pijl-g)"/>
+          <text x="444" y="306" font-size="19" font-weight="700" fill="#2f7d5b">blijf bewegen</text>
+          <text x="444" y="330" font-size="16" fill="#5d5753">minder stijf,</text>
+          <text x="444" y="350" font-size="16" fill="#5d5753">vaak minder pijn</text>
+          <text x="444" y="382" font-size="16" fill="#5d5753">artrose wordt</text>
+          <text x="444" y="402" font-size="16" fill="#5d5753">er niet erger van</text>
+          <path d="M178,140 L132,140" stroke="#8f8f8f" stroke-width="2"/>
+          <text x="70" y="134" text-anchor="middle" font-size="18" font-weight="700" fill="#2f7d5b">sterke spier</text>
+          <text x="70" y="155" text-anchor="middle" font-size="16" fill="#5d5753">geeft de knie</text>
+          <text x="70" y="175" text-anchor="middle" font-size="16" fill="#5d5753">steun</text>
+        </g>
+        <!-- stap 4: gewicht -->
+        <!-- vaste labels -->
+        <path d="M188,268 L132,276" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="70" y="282" text-anchor="middle" font-size="17" font-weight="700" fill="#24201f">knieschijf</text>
+        <path d="M312,60 L410,60" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="416" y="66" font-size="18" font-weight="700" fill="#24201f">dijbeen</text>
+        <path d="M316,500 L410,500" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="416" y="506" font-size="18" font-weight="700" fill="#24201f">scheenbeen</text>
+        </svg>

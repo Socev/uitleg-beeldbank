@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 560" role="img" aria-labelledby="hb-t" width="600" height="560">
+        <title id="hb-t">Het hart pompt bloed in een bloedvat. Bloeddruk is de druk in dat bloedvat; je meet twee getallen: de bovendruk en de onderdruk. Bij een hoge bloeddruk drukt het bloed harder tegen de wand. Blijft dat jaren zo, dan is er meer kans op een beroerte, een hartaanval, nierschade en etalagebenen. Stoppen met roken, bewegen, weinig zout en soms een medicijn maken de druk lager.</title>
+        <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+/* tekeningen: kleuren en bewegingen */
+.zweef { animation: zweef 3.2s ease-in-out infinite alternate; transform-box: fill-box; }
+.zweef.b { animation-delay: -1.1s; } .zweef.c { animation-delay: -2.1s; } .zweef.d { animation-duration: 2.6s; }
+@keyframes zweef { from { transform: translate(-3px, -4px); } to { transform: translate(4px, 4px); } }
+.stroom { stroke-dasharray: 10 14; animation: stroom 1.4s linear infinite; }
+.stroom.traag { animation-duration: 3.2s; }
+@keyframes stroom { to { stroke-dashoffset: -48; } }
+.klop { transform-box: fill-box; transform-origin: center; animation: klop 1s ease-in-out infinite; }
+.klop.zwak { animation: klopzwak 1.25s ease-in-out infinite; }
+@keyframes klop { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.13); } }
+@keyframes klopzwak { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.04); } }
+.golf { transform-box: fill-box; transform-origin: center; animation: golf 1.6s ease-out infinite; }
+@keyframes golf { 0% { transform: scale(.1); opacity: .9; } 70% { opacity: .35; } 100% { transform: scale(1); opacity: 0; } }
+.seintje { stroke-dasharray: 26 400; animation: seintje 1.6s linear infinite; }
+@keyframes seintje { 0%, 30% { stroke-dashoffset: 26; } 75%, 100% { stroke-dashoffset: -260; } }
+.flikker { animation: flikker .9s steps(2, jump-none) infinite; }
+.flikker.b { animation-duration: .7s; animation-delay: -.3s; } .flikker.c { animation-duration: 1.1s; animation-delay: -.5s; }
+@keyframes flikker { 0% { opacity: 1; } 100% { opacity: .15; } }
+.kamerslag { animation: kamerslag 4.6s linear infinite; }
+@keyframes kamerslag { 0%, 4%, 17%, 21%, 30%, 34%, 58%, 62%, 70%, 74%, 92%, 96%, 100% { opacity: 0; }
+  2%, 19%, 32%, 60%, 72%, 94% { opacity: .55; } }
+.kamerslag-r { animation: kamerslagr 1.6s linear infinite; }
+@keyframes kamerslagr { 0%, 45%, 62%, 100% { opacity: 0; } 52% { opacity: .55; } }
+@media (prefers-reduced-motion: reduce) {
+  .zweef, .stroom, .klop, .golf, .seintje, .flikker, .kamerslag, .kamerslag-r { animation: none !important; }
+  .golf { transform: scale(.4); opacity: .5; } .seintje { stroke-dasharray: none; opacity: .7; }
+  .kamerslag, .kamerslag-r { opacity: .3; } .flikker { opacity: .8; }
+}
+</style><defs>
+          <path id="hb-pijl-op" d="M0,0 L0,-26 M-8,-17 L0,-27 L8,-17"/>
+          <path id="hb-pijl-neer" d="M0,0 L0,26 M-8,17 L0,27 L8,17"/>
+        </defs>
+        <g transform="translate(0,-6)">
+        <!-- bloedvat (lengtedoorsnede) -->
+        <rect x="150" y="105" width="450" height="130" fill="#f2c4b0"/>
+        <path d="M150,105 L600,105 M150,235 L600,235" stroke="#c9675b" stroke-width="3"/>
+        <rect x="150" y="125" width="450" height="90" fill="#fbe1dc"/>
+        <path d="M150,125 L600,125 M150,215 L600,215" stroke="#d9a395" stroke-width="2"/>
+        <path d="M150,125 L600,125 M150,215 L600,215" stroke="#b85c00" stroke-width="5"/>
+        <!-- bloedstroom -->
+        <path class="stroom" d="M170,170 L600,170" stroke="#d9443f" stroke-width="7" fill="none"/>
+        <!-- druk op de wand -->
+        <g stroke="#b85c00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <use href="#hb-pijl-op" x="250" y="158"/><use href="#hb-pijl-op" x="340" y="158"/><use href="#hb-pijl-op" x="430" y="158"/><use href="#hb-pijl-op" x="520" y="158"/>
+          <use href="#hb-pijl-neer" x="250" y="182"/><use href="#hb-pijl-neer" x="340" y="182"/><use href="#hb-pijl-neer" x="430" y="182"/><use href="#hb-pijl-neer" x="520" y="182"/>
+        </g>
+        <!-- hart -->
+        <g transform="translate(106,160) scale(2.1)"><path class="klop" d="M0,-12 C-8,-26 -32,-22 -32,-2 C-32,16 -12,28 0,38 C12,28 32,16 32,-2 C32,-22 8,-26 0,-12 Z" fill="#d9443f" stroke="#a8302c" stroke-width="1.2"/></g>
+        <text x="106" y="176" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">hart</text>
+        </g>
+        <!-- labels boven het bloedvat -->
+        <g text-anchor="middle">
+          <g><text x="380" y="52" font-size="21" font-weight="700" fill="#b85c00">jarenlang te hoge druk</text><text x="380" y="80" font-size="16" fill="#5d5753">meer kans op een ziekte van hart en bloedvaten</text></g>
+          </g>
+
+        <!-- stap 1 en 2: bloeddrukmeter -->
+        <!-- stap 3: na jaren -->
+        <g>
+          <text x="300" y="266" text-anchor="middle" font-size="18" font-weight="700" fill="#24201f">Jarenlang te hoog? Meer kans op:</text>
+          <g fill="#faf8f6" stroke="#e9e2dc" stroke-width="2">
+            <rect x="20" y="280" width="270" height="124" rx="16"/><rect x="310" y="280" width="270" height="124" rx="16"/>
+            <rect x="20" y="420" width="270" height="124" rx="16"/><rect x="310" y="420" width="270" height="124" rx="16"/>
+          </g>
+          <!-- hersenen -->
+          <g transform="translate(70,342)">
+            <path d="M-30,8 C-36,-8 -24,-28 -4,-26 C6,-34 28,-28 30,-10 C38,0 32,20 16,22 C8,30 -8,30 -14,22 C-26,24 -32,18 -30,8 Z" fill="#f6d6cd" stroke="#c9675b" stroke-width="3"/>
+            <path d="M-14,-10 C-8,-18 0,-4 8,-12 M-18,6 C-10,0 0,14 12,4 M2,-24 C-2,-16 4,-14 2,-6" stroke="#c9675b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </g>
+          <text x="112" y="332" font-size="19" font-weight="700" fill="#24201f">Hersenen</text>
+          <text x="112" y="358" font-size="15" fill="#5d5753">beroerte</text>
+          <!-- hart -->
+          <g transform="translate(360,340) scale(1)"><path d="M0,-12 C-8,-26 -32,-22 -32,-2 C-32,16 -12,28 0,38 C12,28 32,16 32,-2 C32,-22 8,-26 0,-12 Z" fill="#d9443f" stroke="#a8302c" stroke-width="2"/></g>
+          <text x="402" y="332" font-size="19" font-weight="700" fill="#24201f">Hart</text>
+          <text x="402" y="358" font-size="15" fill="#5d5753">hartaanval,</text>
+          <text x="402" y="378" font-size="15" fill="#5d5753">pijn op de borst</text>
+          <!-- nieren -->
+          <g fill="#c97a6a" stroke="#8a4035" stroke-width="2">
+            <path transform="translate(58,482)" d="M2,-26 C-14,-26 -20,-8 -18,6 C-16,22 -4,28 2,20 C6,14 -4,10 -4,0 C-4,-8 6,-10 6,-18 C6,-24 4,-26 2,-26 Z"/>
+            <path transform="translate(82,482) scale(-1,1)" d="M2,-26 C-14,-26 -20,-8 -18,6 C-16,22 -4,28 2,20 C6,14 -4,10 -4,0 C-4,-8 6,-10 6,-18 C6,-24 4,-26 2,-26 Z"/>
+          </g>
+          <text x="112" y="472" font-size="19" font-weight="700" fill="#24201f">Nieren</text>
+          <text x="112" y="498" font-size="15" fill="#5d5753">nierschade</text>
+          <!-- benen -->
+          <g transform="translate(358,482)">
+            <path d="M-12,-36 L8,-36 L8,18 L26,26 Q32,34 22,36 L-12,36 Z" fill="#ece5df" stroke="#8f8f8f" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M-2,-34 L-2,24" stroke="#d9443f" stroke-width="3"/>
+            <path d="M-2,-6 L-2,4" stroke="#7a2a5a" stroke-width="6" stroke-linecap="round"/>
+          </g>
+          <text x="402" y="472" font-size="19" font-weight="700" fill="#24201f">Benen</text>
+          <text x="402" y="498" font-size="15" fill="#5d5753">etalagebenen</text>
+        </g>
+
+        <!-- stap 4: wat helpt -->
+        </svg>

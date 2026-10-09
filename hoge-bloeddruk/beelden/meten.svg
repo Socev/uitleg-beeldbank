@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-160 0 920 200" role="img" aria-labelledby="meet-t" width="920" height="200">
+      <title id="meet-t">Zo meet je: een half uur iets rustigs doen, 5 minuten stil zitten zonder te praten, 2 keer meten met 2 minuten ertussen, en de getallen opschrijven.</title>
+      <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+</style><g fill="#e3f0f8" stroke="#c4dcec" stroke-width="3">
+        <circle cx="75" cy="72" r="54"/><circle cx="225" cy="72" r="54"/><circle cx="375" cy="72" r="54"/><circle cx="525" cy="72" r="54"/>
+      </g>
+      <g stroke="#8f8f8f" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M144,62 L154,72 L144,82"/><path d="M294,62 L304,72 L294,82"/><path d="M444,62 L454,72 L444,82"/>
+      </g>
+      <!-- klok -->
+      <g transform="translate(75,72)" stroke="#2a6f97" stroke-width="4" stroke-linecap="round" fill="none">
+        <circle r="30" fill="#fff"/>
+        <path d="M0,0 L0,-21 M0,0 L13,8"/>
+        <circle r="2.5" fill="#2a6f97"/>
+      </g>
+      <!-- stoel -->
+      <g transform="translate(225,72)" stroke="#2a6f97" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M-16,-30 L-16,30 M-16,4 L20,4 L20,30 M-16,4 L-16,4"/>
+        <path d="M-16,4 L20,4" stroke-width="8"/>
+      </g>
+      <!-- bloeddrukmeter -->
+      <g transform="translate(375,72)">
+        <rect x="-26" y="-30" width="40" height="52" rx="8" fill="#fff" stroke="#2a6f97" stroke-width="3"/>
+        <rect x="-20" y="-24" width="28" height="22" rx="3" fill="#c4dcec"/>
+        <circle cx="-6" cy="10" r="5" fill="#2a6f97"/>
+        <path d="M14,0 C30,0 30,24 22,30" stroke="#2a6f97" stroke-width="3" fill="none"/>
+        <rect x="10" y="26" width="26" height="14" rx="4" fill="#2a6f97"/>
+      </g>
+      <!-- schrift -->
+      <g transform="translate(525,72)">
+        <rect x="-22" y="-30" width="44" height="58" rx="4" fill="#fff" stroke="#2a6f97" stroke-width="3"/>
+        <path d="M-12,-16 L12,-16 M-12,-4 L12,-4 M-12,8 L12,8 M-12,18 L4,18" stroke="#2a6f97" stroke-width="3" stroke-linecap="round"/>
+      </g>
+      <g text-anchor="middle">
+        <text x="75" y="156" font-size="17" font-weight="700" fill="#24201f">een half uur</text>
+        <text x="75" y="180" font-size="15" fill="#5d5753">iets rustigs</text>
+        <text x="225" y="156" font-size="17" font-weight="700" fill="#24201f">5 minuten stil</text>
+        <text x="225" y="180" font-size="15" fill="#5d5753">niet praten</text>
+        <text x="375" y="156" font-size="17" font-weight="700" fill="#24201f">2 keer meten</text>
+        <text x="375" y="180" font-size="15" fill="#5d5753">2 minuten ertussen</text>
+        <text x="525" y="156" font-size="17" font-weight="700" fill="#24201f">opschrijven</text>
+        <text x="525" y="180" font-size="15" fill="#5d5753">boven en onder</text>
+      </g>
+    </svg>

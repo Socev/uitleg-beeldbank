@@ -1,7 +1,7 @@
 # Uitleg-beeldbank
 
 Zelfgetekende uitlegplaatjes en eenvoudige teksten (taalniveau B1) voor tijdens het consult in de huisartsenpraktijk.
-Laat een patiënt zien wat er in de longen, het hart, de hersenen of de urinewegen gebeurt, stap voor stap, op een tablet of een groot scherm.
+Laat een patiënt zien wat er in de longen, het hart, de bloedvaten, de hersenen, de urinewegen of de gewrichten gebeurt, stap voor stap, op een tablet of een groot scherm.
 
 Iedereen mag de plaatjes en teksten gebruiken, aanpassen en aanvullen, ook in de eigen praktijk of op de eigen website.
 Wel graag met naamsvermelding en onder dezelfde licentie (zie [Licentie](#licentie)).
@@ -19,6 +19,11 @@ De onderwerpen komen van [uitleg.tolgaarde.nl](https://uitleg.tolgaarde.nl), de 
 | [Boezemfibrilleren](boezemfibrilleren/) | <img src="boezemfibrilleren/beelden/ritme-2-boezemfibrilleren.svg" width="220" alt="Hart met boezemfibrilleren"> | ritme in 4 stappen (met hartfilmpje), behandeling, zelf doen en bellen |
 | [Prostaat](prostaat/) | <img src="prostaat/beelden/prostaat-2-grotere-prostaat.svg" width="220" alt="Grotere prostaat die op de plasbuis drukt"> | prostaat in 4 stappen (gewoon, groter, kanker, blaas en bekkenbodem), het verschil, zelf doen en medicijnen, PSA-test, bellen |
 | [Blaasontsteking](blaasontsteking/) | <img src="blaasontsteking/beelden/infectie-3-nierbekken-ontsteking.svg" width="220" alt="Urinewegen met nierbekken-ontsteking"> | infectie in 4 stappen (blaas, nier, prostaat), plas testen, welk antibioticum waar werkt (zonder doseringen), zelf doen, bellen |
+| [Hoge bloeddruk](hoge-bloeddruk/) | <img src="hoge-bloeddruk/beelden/bloeddruk-2-hoge-bloeddruk.svg" width="220" alt="Bloedvat met hoge bloeddruk"> | bloeddruk in 4 stappen (gewoon, hoog, na jaren, wat helpt), totale risico, zelf thuis meten, zelf doen en medicijnen, bellen |
+| [Diabetes type 2](diabetes-type-2/) | <img src="diabetes-type-2/beelden/suiker-2-diabetes-type-2.svg" width="220" alt="Insuline als sleutel bij diabetes type 2"> | suiker en insuline in 4 stappen, zelf doen, medicijnen (zonder doseringen) en een te lage suiker, controles en voeten (7 pictogrammen), bellen |
+| [Knieartrose](knieartrose/) | <img src="knieartrose/beelden/knie-2-artrose.svg" width="220" alt="Knie met artrose"> | knie in 4 stappen (gezond, artrose, sterke spieren, minder gewicht), wat je merkt, zelf doen, pijnstillers en een prik, bellen |
+| [Lage rugpijn](lage-rugpijn/) | <img src="lage-rugpijn/beelden/rug-3-hernia.svg" width="220" alt="Onderrug met een hernia"> | rug in 4 stappen (gezond, gewone rugpijn, hernia, bewegen helpt), hoe lang het duurt, zelf doen en pijnstillers, foto of scan, bellen |
+| [Schildklier (te traag)](schildklier/) | <img src="schildklier/beelden/lichaam-2-te-langzaam.svg" width="220" alt="Te langzaam werkende schildklier"> | schildklier in 3 stappen, het tablet innemen, bloed prikken en controle, zwanger worden of zijn, bellen |
 
 ## Zo is een onderwerp opgebouwd
 
