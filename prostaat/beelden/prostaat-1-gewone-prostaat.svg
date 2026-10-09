@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uitleg-beeldbank · CC BY-SA 4.0 · Huisartsenpraktijk Tolgaarde / Socev -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 560" role="img" aria-labelledby="pr-t" width="600" height="560">
+        <title id="pr-t">Schematische tekening van de blaas met daaronder de prostaat. De plasbuis loopt van de blaas dwars door het midden van de prostaat naar buiten. Een grotere prostaat kan de plasbuis dichtdrukken. Prostaatkanker groeit meestal aan de buitenkant van de prostaat; de plasbuis blijft dan vrij.</title>
+        <style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+/* tekeningen: kleuren en bewegingen */
+.zweef { animation: zweef 3.2s ease-in-out infinite alternate; transform-box: fill-box; }
+.zweef.b { animation-delay: -1.1s; } .zweef.c { animation-delay: -2.1s; } .zweef.d { animation-duration: 2.6s; }
+@keyframes zweef { from { transform: translate(-3px, -4px); } to { transform: translate(4px, 4px); } }
+.stroom { stroke-dasharray: 10 14; animation: stroom 1.4s linear infinite; }
+.stroom.traag { animation-duration: 3.2s; }
+@keyframes stroom { to { stroke-dashoffset: -48; } }
+.klop { transform-box: fill-box; transform-origin: center; animation: klop 1s ease-in-out infinite; }
+.klop.zwak { animation: klopzwak 1.25s ease-in-out infinite; }
+@keyframes klop { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.13); } }
+@keyframes klopzwak { 0%, 60%, 100% { transform: scale(1); } 20% { transform: scale(1.04); } }
+.golf { transform-box: fill-box; transform-origin: center; animation: golf 1.6s ease-out infinite; }
+@keyframes golf { 0% { transform: scale(.1); opacity: .9; } 70% { opacity: .35; } 100% { transform: scale(1); opacity: 0; } }
+.seintje { stroke-dasharray: 26 400; animation: seintje 1.6s linear infinite; }
+@keyframes seintje { 0%, 30% { stroke-dashoffset: 26; } 75%, 100% { stroke-dashoffset: -260; } }
+.flikker { animation: flikker .9s steps(2, jump-none) infinite; }
+.flikker.b { animation-duration: .7s; animation-delay: -.3s; } .flikker.c { animation-duration: 1.1s; animation-delay: -.5s; }
+@keyframes flikker { 0% { opacity: 1; } 100% { opacity: .15; } }
+.kamerslag { animation: kamerslag 4.6s linear infinite; }
+@keyframes kamerslag { 0%, 4%, 17%, 21%, 30%, 34%, 58%, 62%, 70%, 74%, 92%, 96%, 100% { opacity: 0; }
+  2%, 19%, 32%, 60%, 72%, 94% { opacity: .55; } }
+.kamerslag-r { animation: kamerslagr 1.6s linear infinite; }
+@keyframes kamerslagr { 0%, 45%, 62%, 100% { opacity: 0; } 52% { opacity: .55; } }
+@media (prefers-reduced-motion: reduce) {
+  .zweef, .stroom, .klop, .golf, .seintje, .flikker, .kamerslag, .kamerslag-r { animation: none !important; }
+  .golf { transform: scale(.4); opacity: .5; } .seintje { stroke-dasharray: none; opacity: .7; }
+  .kamerslag, .kamerslag-r { opacity: .3; } .flikker { opacity: .8; }
+}
+</style><!-- urineleiders en blaas -->
+        <path d="M168,14 C182,44 188,66 196,94 M432,14 C418,44 412,66 404,94" stroke="#d39a8a" stroke-width="12" fill="none" stroke-linecap="round"/>
+        <path d="M300,262 C230,262 140,215 140,140 C140,70 215,36 300,36 C385,36 460,70 460,140 C460,215 370,262 300,262 Z" fill="#fbefb8" stroke="#d39a8a" stroke-width="14"/>
+        <text x="300" y="140" text-anchor="middle" font-size="24" font-weight="700" fill="#8a4035">blaas</text>
+        <text x="300" y="166" text-anchor="middle" font-size="16" fill="#5d5753">met plas</text>
+        <!-- bekkenbodem -->
+        <path d="M110,432 C190,458 252,468 286,468 M314,468 C348,468 410,458 490,432" stroke="#b5705f" stroke-width="14" fill="none" stroke-dasharray="16 5"/>
+        <g font-size="15" text-anchor="middle" fill="#5d5753"><text x="520" y="470">bekkenbodem-</text><text x="520" y="489">spieren</text></g>
+        <!-- gewone prostaat (stap 1, 3, 4) -->
+        <g>
+          <ellipse cx="300" cy="330" rx="92" ry="72" fill="#f2c4b0" stroke="#c9675b" stroke-width="4"/>
+          <rect x="288" y="250" width="24" height="256" rx="4" fill="#fbefb8" stroke="#c9867a" stroke-width="3"/>
+          <path class="stroom" d="M300,262 L300,500" stroke="#e0b400" stroke-width="9" fill="none"/>
+          <path class="stroom" d="M300,512 L300,548" stroke="#e0b400" stroke-width="9" fill="none"/>
+        </g>
+        <!-- grotere prostaat (stap 2) -->
+        <!-- binnenkant en buitenkant (stap 3) -->
+        <!-- vaste labels -->
+        <path d="M384,318 L460,300" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="520" y="298" text-anchor="middle" font-size="19" font-weight="700" fill="#8a4035">prostaat</text>
+        <text x="520" y="318" text-anchor="middle" font-size="14" fill="#5d5753">(zo groot als</text>
+        <text x="520" y="335" text-anchor="middle" font-size="14" fill="#5d5753">een kastanje)</text>
+        <path d="M286,486 L218,500" stroke="#8f8f8f" stroke-width="2"/>
+        <text x="210" y="506" text-anchor="end" font-size="17" font-weight="700" fill="#24201f">plasbuis</text>
+        <text x="320" y="552" font-size="14" fill="#5d5753">naar buiten (penis)</text>
+      </svg>

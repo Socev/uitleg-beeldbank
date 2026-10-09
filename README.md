@@ -1,7 +1,7 @@
 # Uitleg-beeldbank
 
 Zelfgetekende uitlegplaatjes en eenvoudige teksten (taalniveau B1) voor tijdens het consult in de huisartsenpraktijk.
-Laat een patiënt zien wat er in de longen, het hart of de hersenen gebeurt, stap voor stap, op een tablet of een groot scherm.
+Laat een patiënt zien wat er in de longen, het hart, de hersenen of de urinewegen gebeurt, stap voor stap, op een tablet of een groot scherm.
 
 Iedereen mag de plaatjes en teksten gebruiken, aanpassen en aanvullen, ook in de eigen praktijk of op de eigen website.
 Wel graag met naamsvermelding en onder dezelfde licentie (zie [Licentie](#licentie)).
@@ -17,6 +17,8 @@ De onderwerpen komen van [uitleg.tolgaarde.nl](https://uitleg.tolgaarde.nl), de 
 | [COPD](copd/) | <img src="copd/beelden/longen-2-copd.svg" width="220" alt="Luchtbuisje met longblaasjes bij COPD"> | gezond en COPD, stoppen met roken (longfunctie per leeftijd), zelf doen, longaanval |
 | [Hartfalen](hartfalen/) | <img src="hartfalen/beelden/pomp-2-hartfalen.svg" width="220" alt="Lichaam met hartfalen"> | hart als pomp, dagelijks wegen, medicijnen, zelf doen en bellen |
 | [Boezemfibrilleren](boezemfibrilleren/) | <img src="boezemfibrilleren/beelden/ritme-2-boezemfibrilleren.svg" width="220" alt="Hart met boezemfibrilleren"> | ritme in 4 stappen (met hartfilmpje), behandeling, zelf doen en bellen |
+| [Prostaat](prostaat/) | <img src="prostaat/beelden/prostaat-2-grotere-prostaat.svg" width="220" alt="Grotere prostaat die op de plasbuis drukt"> | prostaat in 4 stappen (gewoon, groter, kanker, blaas en bekkenbodem), het verschil, zelf doen en medicijnen, PSA-test, bellen |
+| [Blaasontsteking](blaasontsteking/) | <img src="blaasontsteking/beelden/infectie-3-nierbekken-ontsteking.svg" width="220" alt="Urinewegen met nierbekken-ontsteking"> | infectie in 4 stappen (blaas, nier, prostaat), plas testen, welk antibioticum waar werkt (zonder doseringen), zelf doen, bellen |
 
 ## Zo is een onderwerp opgebouwd
 
